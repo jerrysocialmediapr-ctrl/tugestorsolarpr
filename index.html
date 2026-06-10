@@ -4,9 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- =====================================================
-       SEO PRIMARY META TAGS
-  ====================================================== -->
   <title>Tu Gestor Solar Puerto Rico | Placas Solares, Batería Tesla, Batería Enphase | Cotización Gratis</title>
   <meta name="description" content="Cotiza placas solares en Puerto Rico con las mejores opciones del mercado. Batería Tesla Powerwall, Batería Enphase 10.08kWh. Alquiler de placas solares disponible. Compara y encuentra el pago más bajo de la industria. Cotización gratis en 24h." />
   <meta name="keywords" content="placas solares Puerto Rico, batería Tesla Powerwall Puerto Rico, batería Enphase Puerto Rico, alquiler de placas solares, power solar PR, windmar home, home power solar, solar now Puerto Rico, pro solar ecopower, tropical solar PR, paneles solares Puerto Rico, energía solar PR, cotización solar gratis, instalación solar residencial, placas solares precio, solar PR, energía renovable Puerto Rico" />
@@ -14,9 +11,6 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <link rel="canonical" href="https://tugestorsolar.pr/" />
 
-  <!-- =====================================================
-       OPEN GRAPH
-  ====================================================== -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_PR" />
   <meta property="og:url" content="https://tugestorsolar.pr/" />
@@ -27,24 +21,15 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- =====================================================
-       TWITTER CARD
-  ====================================================== -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Tu Gestor Solar PR | Cotiza Placas Solares" />
   <meta name="twitter:description" content="Cotiza placas solares en Puerto Rico. Batería Tesla Powerwall y Batería Enphase. Alquiler disponible. Gratis en 24h." />
   <meta name="twitter:image" content="https://tugestorsolar.pr/og-image.jpg" />
 
-  <!-- =====================================================
-       GEO / LOCAL SEO
-  ====================================================== -->
   <meta name="geo.region" content="US-PR" />
   <meta name="geo.placename" content="Puerto Rico" />
   <meta name="ICBM" content="18.2208, -66.5901" />
 
-  <!-- =====================================================
-       STRUCTURED DATA
-  ====================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,17 +75,11 @@
   }
   </script>
 
-  <!-- =====================================================
-       FONTS
-  ====================================================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* =====================================================
-       TOKENS
-    ====================================================== */
     :root {
       --sun: #F5A800;
       --sun-dark: #D98E00;
@@ -130,9 +109,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* =====================================================
-       HEADER / NAV
-    ====================================================== */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -162,9 +138,6 @@
     }
     .nav-cta:hover { background: var(--sun-dark); }
 
-    /* =====================================================
-       HERO
-    ====================================================== */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -258,9 +231,6 @@
       50% { transform: translateY(6px); }
     }
 
-    /* =====================================================
-       FORM SECTION
-    ====================================================== */
     .form-section { padding: 80px 5%; background: var(--sky); }
     .form-wrapper { max-width: 680px; margin: 0 auto; }
     .form-card {
@@ -323,13 +293,9 @@
     }
     input::placeholder, textarea::placeholder { color: var(--gray-text); }
 
-    /* Company sub-field */
     #company-name-field { margin-top: 10px; display: none; }
     #company-name-field.visible { display: block; }
 
-    /* =====================================================
-       LOCATION
-    ====================================================== */
     .location-confirm {
       background: rgba(245,168,0,0.08);
       border: 1px solid rgba(245,168,0,0.25);
@@ -385,7 +351,6 @@
     }
     .location-tag.visible { display: flex; }
 
-    /* GPS permission notice */
     .gps-notice {
       display: none;
       background: rgba(232,64,64,0.1);
@@ -399,7 +364,6 @@
     }
     .gps-notice.visible { display: block; }
 
-    /* Manual location extras */
     .manual-or { font-size: 0.78rem; color: var(--gray-text); margin: 8px 0 4px; text-align: center; }
     .manual-coords-toggle {
       background: none;
@@ -416,19 +380,8 @@
     .manual-coords-toggle:hover { border-color: var(--accent); color: var(--accent); }
     #manual-coords-group { display: none; margin-top: 8px; }
     #manual-coords-group.visible { display: block; }
-    .addr-validation-msg {
-      font-size: 0.78rem;
-      margin-top: 6px;
-      display: none;
-      line-height: 1.4;
-    }
-    .addr-validation-msg.valid { display: block; color: var(--accent); }
-    .addr-validation-msg.invalid { display: block; color: var(--red); }
-    .addr-validation-msg.checking { display: block; color: var(--gray-mid); }
 
-    /* =====================================================
-       FILE UPLOAD
-    ====================================================== */
+    /* ── FILE UPLOAD ── */
     .upload-zone {
       border: 2px dashed rgba(255,255,255,0.15);
       border-radius: var(--radius);
@@ -440,15 +393,17 @@
       background: rgba(255,255,255,0.02);
     }
     .upload-zone:hover, .upload-zone.dragover { border-color: var(--sun); background: rgba(245,168,0,0.05); }
-    .upload-zone input[type="file"] {
+    /* The hidden file input — fills the zone but pointer-events off so clicks go to JS handler */
+    #factura-file {
       position: absolute;
       inset: 0;
       opacity: 0;
-      cursor: pointer;
       width: 100%;
       height: 100%;
+      cursor: pointer;
       border: none;
       padding: 0;
+      pointer-events: none; /* JS triggers it manually */
     }
     .upload-icon { font-size: 2rem; margin-bottom: 10px; }
     .upload-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
@@ -478,9 +433,24 @@
       flex-shrink: 0;
     }
 
-    /* =====================================================
-       SUBMIT BUTTON
-    ====================================================== */
+    /* Add-more button (shown after first image upload, hidden when PDF) */
+    .btn-add-more {
+      display: none;
+      width: 100%;
+      background: rgba(245,168,0,0.08);
+      border: 1.5px dashed rgba(245,168,0,0.4);
+      color: var(--sun);
+      border-radius: var(--radius-sm);
+      padding: 11px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .btn-add-more.visible { display: block; }
+    .btn-add-more:hover { background: rgba(245,168,0,0.14); }
+
     .btn-submit {
       width: 100%;
       background: var(--sun);
@@ -505,9 +475,6 @@
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .form-legal { font-size: 0.75rem; color: var(--gray-text); text-align: center; margin-top: 14px; line-height: 1.5; }
 
-    /* =====================================================
-       SUCCESS STATE
-    ====================================================== */
     .success-state { display: none; text-align: center; padding: 32px 0; }
     .success-state.visible { display: block; }
     .success-icon { font-size: 4rem; margin-bottom: 16px; animation: pop 0.4s cubic-bezier(0.26, 1.8, 0.46, 0.9); }
@@ -515,9 +482,6 @@
     .success-title { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; }
     .success-sub { color: var(--gray-mid); line-height: 1.6; }
 
-    /* =====================================================
-       WHY SECTION
-    ====================================================== */
     .why-section { padding: 80px 5%; background: var(--sky-mid); text-align: center; }
     .why-grid {
       display: grid;
@@ -531,9 +495,6 @@
     .why-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 7px; }
     .why-card p { font-size: 0.85rem; color: var(--gray-mid); line-height: 1.55; }
 
-    /* =====================================================
-       COMPANIES SECTION
-    ====================================================== */
     .companies-section { padding: 60px 5%; background: var(--sky); text-align: center; }
     .companies-label { font-size: 0.75rem; letter-spacing: 0.1em; color: var(--gray-text); text-transform: uppercase; margin-bottom: 24px; }
     .companies-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 800px; margin: 0 auto; }
@@ -548,9 +509,6 @@
       white-space: nowrap;
     }
 
-    /* =====================================================
-       BATTERIES SECTION
-    ====================================================== */
     .batteries-section { padding: 80px 5%; background: var(--sky-mid); text-align: center; }
     .batteries-grid {
       display: grid;
@@ -565,9 +523,6 @@
     .battery-logo.enphase { color: #F37A20; }
     .battery-card p { font-size: 0.85rem; color: var(--gray-mid); line-height: 1.55; }
 
-    /* =====================================================
-       FOOTER
-    ====================================================== */
     footer {
       background: #070F1C;
       padding: 40px 5%;
@@ -577,9 +532,6 @@
     footer p { font-size: 0.82rem; color: var(--gray-text); line-height: 1.7; }
     footer strong { color: var(--sun); }
 
-    /* =====================================================
-       LOADING OVERLAY
-    ====================================================== */
     .loading-overlay {
       display: none;
       position: fixed;
@@ -604,9 +556,6 @@
     .loading-text { font-size: 0.9rem; color: var(--gray-mid); }
     .loading-progress { font-size: 0.78rem; color: var(--gray-text); margin-top: 4px; }
 
-    /* =====================================================
-       TOAST
-    ====================================================== */
     .toast {
       position: fixed;
       bottom: 28px;
@@ -629,14 +578,9 @@
     .toast.error { border-color: var(--red); background: rgba(232,64,64,0.15); }
     .toast.success { border-color: var(--accent); background: rgba(0,201,167,0.12); }
 
-    /* =====================================================
-       DIVIDER
-    ====================================================== */
     .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); margin: 0; }
 
-    /* =====================================================
-       FACTURA MODAL (important notice)
-    ====================================================== */
+    /* Factura modal */
     .factura-modal-overlay {
       display: none;
       position: fixed;
@@ -761,7 +705,7 @@
         <div id="form-body">
           <p class="form-sub">Todos los campos son requeridos para preparar tu cotización.</p>
 
-          <!-- NAME ROW -->
+          <!-- NAME -->
           <div class="form-row">
             <div class="field">
               <label for="nombre">Nombre</label>
@@ -783,7 +727,7 @@
             <input type="email" id="email" name="email" placeholder="juan@email.com" autocomplete="email" />
           </div>
 
-          <!-- COTIZAR MODE — now a dropdown inside the form -->
+          <!-- COTIZAR MODE -->
           <div class="field">
             <label for="modo-cotizar">¿Cómo deseas cotizar?</label>
             <select id="modo-cotizar" name="modoCotizar" onchange="handleModoChange()">
@@ -793,7 +737,6 @@
             </select>
           </div>
 
-          <!-- Company name field (conditional) -->
           <div class="field" id="company-name-field">
             <label for="company-input">Nombre de la compañía</label>
             <input type="text" id="company-input" name="companyName"
@@ -802,11 +745,10 @@
             <p style="font-size:0.78rem;color:#6E7A8A;margin-top:6px;">Escribe el nombre exacto de la compañía con la que deseas cotizar.</p>
           </div>
 
-          <!-- LOCATION FIELD -->
+          <!-- LOCATION -->
           <div class="field">
             <label>Ubicación de la residencia</label>
 
-            <!-- Step 1: Ask if home -->
             <div class="location-confirm visible" id="loc-confirm">
               <p>¿Estás en tu residencia en este momento?</p>
               <div class="confirm-btns">
@@ -815,7 +757,7 @@
               </div>
             </div>
 
-            <!-- GPS flow (shown when at home) -->
+            <!-- GPS flow -->
             <div id="loc-gps" style="display:none;">
               <div class="location-inner">
                 <input type="text" id="ubicacion" name="ubicacion" placeholder="Presiona el botón para detectar tu ubicación..." readonly />
@@ -835,12 +777,10 @@
               <p class="location-hint">Tu ubicación se usa solo para preparar tu cotización. No se comparte con terceros.</p>
             </div>
 
-            <!-- Manual flow (shown when NOT home) -->
+            <!-- Manual flow -->
             <div id="loc-manual" style="display:none;">
               <input type="text" id="ubicacion-manual" name="ubicacionManual"
-                placeholder="Ej: Calle Sol 123, Ponce, PR 00731"
-                oninput="resetAddrValidation()" />
-              <div class="addr-validation-msg" id="addr-msg"></div>
+                placeholder="Ej: Calle Sol 123, Ponce, PR 00731" />
               <p class="location-hint">Escribe la dirección física completa de la residencia.</p>
               <p class="manual-or">— o bien —</p>
               <button class="manual-coords-toggle" type="button" onclick="toggleManualCoords()">Ingresar coordenadas manualmente</button>
@@ -866,20 +806,35 @@
           <!-- FACTURA UPLOAD -->
           <div class="field">
             <label>Factura de LUMA Energy</label>
+
+            <!--
+              UPLOAD ZONE — clicking it shows the aviso modal first.
+              The actual <input type="file"> is triggered by JS AFTER the modal is confirmed.
+              multiple attribute allows picking several images at once (iOS/Android shows camera/gallery/files sheet).
+            -->
             <div class="upload-zone" id="upload-zone"
                  ondrop="handleDrop(event)"
                  ondragover="event.preventDefault(); this.classList.add('dragover')"
                  ondragleave="this.classList.remove('dragover')"
-                 onclick="triggerUploadClick(event)">
+                 onclick="handleZoneClick()">
+              <!-- Hidden input — triggered manually via JS -->
               <input type="file" id="factura-file" name="factura"
                      accept="image/*,.heic,.heif,.pdf"
-                     style="pointer-events:none;"
+                     multiple
+                     style="display:none;"
                      onchange="handleFileSelect(event)" />
               <div class="upload-icon">📄</div>
               <p class="upload-title">Sube tu factura de LUMA</p>
-              <p class="upload-sub" id="upload-sub-text">PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Arrastra o haz click</p>
+              <p class="upload-sub" id="upload-sub-text">PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Toca para seleccionar</p>
             </div>
+
+            <!-- Preview list of selected files -->
             <div class="upload-preview-list" id="upload-preview-list"></div>
+
+            <!-- Add more images button (visible only when images selected, hidden for PDF) -->
+            <button class="btn-add-more" id="btn-add-more" type="button" onclick="openFileInput()">
+              + Agregar otra página / foto
+            </button>
           </div>
 
           <button class="btn-submit" id="btn-submit" onclick="submitForm()" type="button">
@@ -1019,33 +974,22 @@
   <div class="toast" id="toast"></div>
 
   <script>
-    /* =====================================================
-       CONFIGURATION
-    ====================================================== */
+    /* ── CONFIG ── */
     const CONFIG = {
       GAS_URL: "https://script.google.com/macros/s/AKfycbzB-jQKWUt62yUmVoxXMNbCQy80glsVsqRt8sF4sGNsCPmZ8k6eGr0q85f4lTrEnyPX/exec",
       CLOUDINARY_CLOUD: "df8xiv1mn",
       CLOUDINARY_PRESET: "solar_leads_unsigned",
       USE_CLOUDINARY: true,
-      // Nominatim geocoding (free, no key required)
-      GEOCODE_URL: "https://nominatim.openstreetmap.org/search",
     };
 
-    /* =====================================================
-       STATE
-    ====================================================== */
-    let choiceMode    = "";        // 'company' | 'lowest'
+    /* ── STATE ── */
+    let choiceMode      = "";
     let selectedCompany = "";
-    let selectedFiles = [];        // array of File objects
-    let locationData  = { type: "", address: "", lat: "", lng: "" };
+    let selectedFiles   = [];
+    let locationData    = { type: "", address: "", lat: "", lng: "" };
     let facturaModalConfirmed = false;
-    let addrValidated = false;     // true once geocoding confirmed
-    let addrValidating = false;
-    let addrValidateTimer = null;
 
-    /* =====================================================
-       MODO COTIZAR (dropdown)
-    ====================================================== */
+    /* ── MODO COTIZAR ── */
     function handleModoChange() {
       const val = document.getElementById("modo-cotizar").value;
       choiceMode = val;
@@ -1059,9 +1003,7 @@
       }
     }
 
-    /* =====================================================
-       LOCATION LOGIC
-    ====================================================== */
+    /* ── LOCATION ── */
     function handleHome(isHome) {
       document.getElementById("loc-confirm").classList.remove("visible");
       document.getElementById("loc-confirm").style.display = "none";
@@ -1076,10 +1018,9 @@
 
     function requestGPS() {
       if (!navigator.geolocation) {
-        showGpsNotice("Tu navegador no soporta geolocalización.");
+        document.getElementById("gps-notice").classList.add("visible");
         return;
       }
-
       const btn = document.getElementById("btn-gps");
       btn.textContent = "Obteniendo...";
       btn.disabled = true;
@@ -1095,216 +1036,130 @@
           document.getElementById("lat").value = locationData.lat;
           document.getElementById("lng").value = locationData.lng;
           document.getElementById("loc-tag").classList.add("visible");
-          btn.textContent = "Capturada";
+          btn.textContent = "✅ Capturada";
           btn.style.borderColor = "var(--accent)";
           btn.style.color = "var(--accent)";
           btn.disabled = false;
         },
-        (err) => {
+        () => {
           btn.textContent = "📍 Detectar";
           btn.disabled = false;
-          let extra = "";
-          if (err.code === 1) extra = "Debes autorizar el acceso a tu ubicación en el navegador.";
-          else if (err.code === 2) extra = "No se pudo obtener la señal GPS. Verifica que el GPS esté activo.";
-          else extra = "Tiempo de espera agotado. Intenta de nuevo.";
-          showGpsNotice(extra);
+          document.getElementById("gps-notice").classList.add("visible");
         },
         { enableHighAccuracy: true, timeout: 12000, maximumAge: 0 }
       );
     }
 
-    function showGpsNotice(extra) {
-      const el = document.getElementById("gps-notice");
-      el.classList.add("visible");
-    }
-
-    /* =====================================================
-       MANUAL COORDS TOGGLE
-    ====================================================== */
     function toggleManualCoords() {
-      const g = document.getElementById("manual-coords-group");
-      g.classList.toggle("visible");
+      document.getElementById("manual-coords-group").classList.toggle("visible");
     }
 
-    /* =====================================================
-       ADDRESS VALIDATION (Nominatim)
-    ====================================================== */
-    function resetAddrValidation() {
-      addrValidated = false;
-      clearTimeout(addrValidateTimer);
-      const msg = document.getElementById("addr-msg");
-      msg.className = "addr-validation-msg";
-      msg.textContent = "";
-    }
-
-    async function validateAddress(address) {
-      if (!address || address.length < 8) return false;
-      const msg = document.getElementById("addr-msg");
-      msg.className = "addr-validation-msg checking";
-      msg.textContent = "Verificando dirección...";
-      addrValidating = true;
-
-      try {
-        // Add Puerto Rico if not mentioned to help geocoder
-        const query = address.toLowerCase().includes("puerto rico") || address.toLowerCase().includes(", pr")
-          ? address
-          : address + ", Puerto Rico";
-
-        const url = `${CONFIG.GEOCODE_URL}?q=${encodeURIComponent(query)}&format=json&limit=1&countrycodes=us`;
-        const res = await fetch(url, { headers: { "Accept-Language": "es" } });
-        const data = await res.json();
-
-        if (data && data.length > 0) {
-          const result = data[0];
-          // Verify it's roughly Puerto Rico (lat 17.9–18.5, lng -67.3 to -65.2)
-          const lat = parseFloat(result.lat);
-          const lon = parseFloat(result.lon);
-          const inPR = lat >= 17.8 && lat <= 18.6 && lon >= -67.4 && lon <= -65.1;
-
-          if (inPR) {
-            locationData.lat = lat.toFixed(6);
-            locationData.lng = lon.toFixed(6);
-            document.getElementById("lat").value = locationData.lat;
-            document.getElementById("lng").value = locationData.lng;
-            msg.className = "addr-validation-msg valid";
-            msg.textContent = "Dirección verificada: " + result.display_name;
-            addrValidated = true;
-            addrValidating = false;
-            return true;
-          } else {
-            msg.className = "addr-validation-msg invalid";
-            msg.textContent = "La dirección no parece estar en Puerto Rico. Por favor verifica e intenta de nuevo.";
-            addrValidated = false;
-            addrValidating = false;
-            return false;
-          }
-        } else {
-          msg.className = "addr-validation-msg invalid";
-          msg.textContent = "No pudimos verificar esta dirección. Revisa que sea correcta e incluya municipio y código postal.";
-          addrValidated = false;
-          addrValidating = false;
-          return false;
-        }
-      } catch(e) {
-        msg.className = "addr-validation-msg invalid";
-        msg.textContent = "Error al verificar la dirección. Verifica tu conexión e intenta de nuevo.";
-        addrValidated = false;
-        addrValidating = false;
-        return false;
-      }
-    }
-
-    /* =====================================================
-       FACTURA MODAL
-    ====================================================== */
-    function triggerUploadClick(e) {
-      e.preventDefault();
-      e.stopPropagation();
+    /* ── FILE UPLOAD CLICK FLOW ──
+       1. User clicks zone → if modal not yet confirmed, show modal.
+       2. User clicks "Entendido, continuar" → modal closes, openFileInput() fires.
+       3. openFileInput() triggers the hidden <input type="file"> — browser shows
+          native picker (camera / photos / files on iOS & Android).
+    ── */
+    function handleZoneClick() {
       if (!facturaModalConfirmed) {
         document.getElementById("factura-modal").classList.add("visible");
       } else {
-        document.getElementById("factura-file").click();
+        openFileInput();
       }
     }
 
     function confirmFacturaModal() {
       facturaModalConfirmed = true;
       document.getElementById("factura-modal").classList.remove("visible");
-      document.getElementById("factura-file").click();
+      // Small timeout so the modal has time to fully close before the native picker opens
+      setTimeout(openFileInput, 80);
     }
 
-    /* =====================================================
-       FILE UPLOAD — multi-file with PDF/image logic
-    ====================================================== */
+    function openFileInput() {
+      const input = document.getElementById("factura-file");
+      // Reset so same file can be re-selected after removal
+      input.value = "";
+      input.click();
+    }
+
+    /* ── FILE PROCESSING ── */
     const ALLOWED_IMAGE_TYPES = ["image/jpeg","image/png","image/webp","image/heic","image/heif","image/jpg"];
-    const ALLOWED_TYPES = [...ALLOWED_IMAGE_TYPES, "application/pdf"];
     const MAX_MB = 10;
 
     function handleFileSelect(event) {
-      const files = Array.from(event.target.files);
-      processFiles(files);
-      // Reset input so same file can be re-added after removal
-      event.target.value = "";
+      processFiles(Array.from(event.target.files));
+      event.target.value = ""; // reset so same file can be picked again
     }
 
     function handleDrop(event) {
       event.preventDefault();
       document.getElementById("upload-zone").classList.remove("dragover");
-      const files = Array.from(event.dataTransfer.files);
-      processFiles(files);
+      processFiles(Array.from(event.dataTransfer.files));
     }
 
     function processFiles(newFiles) {
       for (const file of newFiles) {
-        // Type check
-        const isImage = ALLOWED_IMAGE_TYPES.includes(file.type) ||
-          /\.(heic|heif)$/i.test(file.name);
-        const isPdf   = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
+        const isImage = ALLOWED_IMAGE_TYPES.includes(file.type) || /\.(heic|heif)$/i.test(file.name);
+        const isPdf   = file.type === "application/pdf"         || /\.pdf$/i.test(file.name);
 
         if (!isImage && !isPdf) {
           showToast(`Archivo no permitido: ${file.name}. Solo PDF o imágenes (JPG, PNG, HEIC, WEBP).`, "error");
           continue;
         }
-
-        // Size check
         if (file.size > MAX_MB * 1024 * 1024) {
           showToast(`El archivo "${file.name}" supera los ${MAX_MB}MB.`, "error");
           continue;
         }
-
-        // If currently have a PDF, block adding anything else
+        // Already have a PDF → block anything else
         if (selectedFiles.some(f => f.type === "application/pdf" || /\.pdf$/i.test(f.name))) {
           showToast("Ya tienes un PDF seleccionado. No puedes mezclar PDF con imágenes.", "error");
           continue;
         }
-
-        // If trying to add a PDF but already have images, block
+        // Trying to add PDF but already have images → block
         if (isPdf && selectedFiles.length > 0) {
           showToast("No puedes mezclar imágenes con PDF. Elimina las imágenes primero.", "error");
           continue;
         }
-
-        // If adding a second PDF (already have one PDF)
-        if (isPdf && selectedFiles.some(f => f.type === "application/pdf" || /\.pdf$/i.test(f.name))) {
-          showToast("Solo se permite un archivo PDF.", "error");
-          continue;
-        }
-
         selectedFiles.push(file);
       }
       renderFilePreview();
     }
 
     function renderFilePreview() {
-      const list = document.getElementById("upload-preview-list");
-      const zone = document.getElementById("upload-zone");
-
+      const list    = document.getElementById("upload-preview-list");
+      const zone    = document.getElementById("upload-zone");
+      const addMore = document.getElementById("btn-add-more");
       list.innerHTML = "";
 
       if (selectedFiles.length === 0) {
         list.classList.remove("visible");
         zone.style.display = "block";
+        addMore.classList.remove("visible");
+        document.getElementById("upload-sub-text").textContent =
+          "PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Toca para seleccionar";
         return;
       }
 
       list.classList.add("visible");
 
       const hasPdf = selectedFiles.some(f => f.type === "application/pdf" || /\.pdf$/i.test(f.name));
+
       if (hasPdf) {
+        // PDF selected → hide zone and add-more button
         zone.style.display = "none";
+        addMore.classList.remove("visible");
       } else {
-        // Images — keep zone visible so they can add more pages
-        zone.style.display = "block";
-        document.getElementById("upload-sub-text").textContent =
-          `${selectedFiles.length} foto(s) cargada(s). Puedes agregar más páginas.`;
+        // Images → hide zone (cleaner UI), show add-more button instead
+        zone.style.display = "none";
+        addMore.classList.add("visible");
       }
 
       selectedFiles.forEach((file, idx) => {
-        const item = document.createElement("div");
+        const item  = document.createElement("div");
         item.className = "upload-preview-item";
         const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
         item.innerHTML = `
-          <span>${isPdf ? "PDF" : "Img"}</span>
+          <span>${isPdf ? "📄 PDF" : "🖼️ Img"}</span>
           <span title="${file.name}">${file.name}</span>
           <button class="btn-remove-item" type="button" onclick="removeFile(${idx})" title="Eliminar">✕</button>
         `;
@@ -1315,19 +1170,12 @@
     function removeFile(idx) {
       selectedFiles.splice(idx, 1);
       renderFilePreview();
-      if (selectedFiles.length === 0) {
-        document.getElementById("upload-sub-text").textContent =
-          "PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Arrastra o haz click";
-      }
     }
 
-    /* =====================================================
-       UPLOAD TO CLOUDINARY
-    ====================================================== */
+    /* ── CLOUDINARY UPLOAD ── */
     async function uploadToCloudinary(file, index, total) {
       const isPdf        = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
       const resourceType = isPdf ? "raw" : "image";
-
       updateLoadingProgress(`Subiendo archivo ${index + 1} de ${total}...`);
 
       const fd = new FormData();
@@ -1339,17 +1187,13 @@
         `https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD}/${resourceType}/upload`,
         { method: "POST", body: fd }
       );
-
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error?.message || `Error al subir archivo ${file.name}`);
       }
-
       const data = await res.json();
-      const secureUrl = data.secure_url;
-      if (!secureUrl) throw new Error("Cloudinary no devolvió secure_url para " + file.name);
-
-      return { secureUrl, fileType: isPdf ? "pdf" : "image", fileName: file.name };
+      if (!data.secure_url) throw new Error("Cloudinary no devolvió secure_url para " + file.name);
+      return { secureUrl: data.secure_url, fileType: isPdf ? "pdf" : "image", fileName: file.name };
     }
 
     function updateLoadingProgress(msg) {
@@ -1357,9 +1201,7 @@
       if (el) el.textContent = msg;
     }
 
-    /* =====================================================
-       VALIDATION
-    ====================================================== */
+    /* ── VALIDATION (sin validación de dirección) ── */
     async function validate() {
       const required = [
         { id: "nombre",   label: "Nombre" },
@@ -1396,17 +1238,14 @@
         }
       }
 
-      // Location
       if (!locationData.type) {
         showToast("Por favor indica si estás en tu residencia o ingresa la dirección.", "error");
         return false;
       }
 
-      if (locationData.type === "gps") {
-        if (!locationData.lat) {
-          showToast("Por favor presiona 'Detectar' y autoriza el acceso a tu ubicación GPS.", "error");
-          return false;
-        }
+      if (locationData.type === "gps" && !locationData.lat) {
+        showToast("Por favor presiona 'Detectar' y autoriza el acceso a tu ubicación GPS.", "error");
+        return false;
       }
 
       if (locationData.type === "manual") {
@@ -1414,7 +1253,6 @@
         const manualLat  = document.getElementById("manual-lat")?.value.trim();
         const manualLng  = document.getElementById("manual-lng")?.value.trim();
 
-        // If they filled in coords
         if (manualLat && manualLng) {
           if (isNaN(parseFloat(manualLat)) || isNaN(parseFloat(manualLng))) {
             showToast("Las coordenadas ingresadas no son válidas.", "error");
@@ -1426,20 +1264,12 @@
           document.getElementById("lat").value = locationData.lat;
           document.getElementById("lng").value = locationData.lng;
         } else {
-          // Must validate address
           if (!manualAddr) {
             showToast("Por favor ingresa la dirección de tu residencia.", "error");
             document.getElementById("ubicacion-manual").focus();
             return false;
           }
-          if (!addrValidated) {
-            showToast("Verificando dirección, por favor espera...", "info");
-            const ok = await validateAddress(manualAddr);
-            if (!ok) {
-              showToast("No pudimos verificar tu dirección. Revísala e intenta de nuevo.", "error");
-              return false;
-            }
-          }
+          // ✅ Sin validación de dirección — se acepta tal como la escribe el usuario
           locationData.address = manualAddr;
         }
       }
@@ -1452,9 +1282,7 @@
       return true;
     }
 
-    /* =====================================================
-       SUBMIT
-    ====================================================== */
+    /* ── SUBMIT ── */
     async function submitForm() {
       const ok = await validate();
       if (!ok) return;
@@ -1480,12 +1308,9 @@
 
         updateLoadingProgress("Guardando tu solicitud...");
 
-        const nombre   = document.getElementById("nombre").value.trim();
-        const apellido = document.getElementById("apellido").value.trim();
-
         const payload = {
-          nombre,
-          apellido,
+          nombre:             document.getElementById("nombre").value.trim(),
+          apellido:           document.getElementById("apellido").value.trim(),
           telefono:           document.getElementById("telefono").value.trim(),
           email:              document.getElementById("email").value.trim(),
           modoCotar:          choiceMode === "company"
@@ -1495,11 +1320,9 @@
           ubicacionDireccion: locationData.address || document.getElementById("ubicacion-manual")?.value || "",
           lat:                locationData.lat || "",
           lng:                locationData.lng || "",
-          // Multi-file arrays
           facturaUrls,
           facturaNames,
           facturaTypes,
-          // Single-file compat fields (first file)
           facturaUrl:   facturaUrls[0]  || "",
           facturaType:  facturaTypes[0] || "",
           facturaName:  facturaNames[0] || "",
@@ -1531,9 +1354,7 @@
       document.getElementById("cotizar").scrollIntoView({ behavior: "smooth" });
     }
 
-    /* =====================================================
-       TOAST
-    ====================================================== */
+    /* ── TOAST ── */
     let toastTimer;
     function showToast(msg, type = "info") {
       const t = document.getElementById("toast");
@@ -1542,21 +1363,6 @@
       clearTimeout(toastTimer);
       toastTimer = setTimeout(() => t.classList.remove("show"), 6000);
     }
-
-    /* =====================================================
-       ADDRESS: trigger validation on blur
-    ====================================================== */
-    document.addEventListener("DOMContentLoaded", () => {
-      const manualInput = document.getElementById("ubicacion-manual");
-      if (manualInput) {
-        manualInput.addEventListener("blur", () => {
-          const val = manualInput.value.trim();
-          if (val.length > 8 && !addrValidated) {
-            validateAddress(val);
-          }
-        });
-      }
-    });
   </script>
 </body>
 </html>
