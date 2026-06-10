@@ -1425,21 +1425,36 @@
 
     /* =====================================================
        UPLOAD TO CLOUDINARY
+       - PDFs  → resource_type "raw"   (abre/descarga directo desde browser)
+       - Images → resource_type "image"
+       Retorna { secureUrl, fileType } — usa SOLO secure_url, nunca public_id
     ====================================================== */
     async function uploadToCloudinary(file) {
+      const isPdf        = file.type === "application/pdf";
+      const resourceType = isPdf ? "raw" : "image";
+
       const fd = new FormData();
       fd.append("file", file);
       fd.append("upload_preset", CONFIG.CLOUDINARY_PRESET);
       fd.append("folder", "solar-leads");
 
       const res = await fetch(
-        `https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD}/auto/upload`,
+        `https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD}/${resourceType}/upload`,
         { method: "POST", body: fd }
       );
 
-      if (!res.ok) throw new Error("Error al subir la factura a Cloudinary");
+      if (!res.ok) {
+        const errData = await res.json().catch(() => ({}));
+        throw new Error(errData.error?.message || "Error al subir la factura a Cloudinary");
+      }
+
       const data = await res.json();
-      return data.secure_url;
+
+      // SOLO secure_url — nunca public_id, asset_id ni url
+      const secureUrl = data.secure_url;
+      if (!secureUrl) throw new Error("Cloudinary no devolvió secure_url");
+
+      return { secureUrl, fileType: isPdf ? "pdf" : "image" };
     }
 
     /* =====================================================
@@ -1532,12 +1547,16 @@
       document.getElementById("loading").classList.add("visible");
 
       try {
-        let facturaUrl = "";
+        let facturaUrl  = "";
+        let facturaType = "image"; // 'pdf' | 'image'
         let facturaBase64 = "";
         let facturaName = selectedFile.name;
 
         if (CONFIG.USE_CLOUDINARY) {
-          facturaUrl = await uploadToCloudinary(selectedFile);
+          // uploadToCloudinary retorna { secureUrl, fileType }
+          const uploaded = await uploadToCloudinary(selectedFile);
+          facturaUrl  = uploaded.secureUrl;   // SOLO secure_url
+          facturaType = uploaded.fileType;
         } else {
           facturaBase64 = await fileToBase64(selectedFile);
         }
@@ -1552,7 +1571,8 @@
           ubicacionDireccion: locationData.address || document.getElementById("ubicacion-manual")?.value || "",
           lat: locationData.lat || "",
           lng: locationData.lng || "",
-          facturaUrl,
+          facturaUrl,   // secure_url de Cloudinary
+          facturaType,  // 'pdf' o 'image' — para el email
           facturaBase64,
           facturaName,
           timestamp: new Date().toISOString(),
