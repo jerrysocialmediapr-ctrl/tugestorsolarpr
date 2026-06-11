@@ -206,775 +206,167 @@
       max-width: 560px;
       margin: 0 auto 40px;
     }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
+    .hero-stats { display: flex; justify-content: center; gap: 40px; margin-bottom: 48px; flex-wrap: wrap; }
     .stat { text-align: center; }
     .stat-num { font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800; color: var(--sun); display: block; }
     .stat-label { font-size: 0.8rem; color: var(--gray-mid); margin-top: 2px; }
-    .hero-scroll {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-decoration: none;
-      animation: bounce 2s infinite;
-    }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
-    }
+    .hero-scroll { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-size: 0.9rem; font-weight: 500; text-decoration: none; animation: bounce 2s infinite; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
     .form-section { padding: 80px 5%; background: var(--sky); }
     .form-wrapper { max-width: 680px; margin: 0 auto; }
-    .form-card {
-      background: var(--sky-mid);
-      border-radius: 20px;
-      padding: 48px 44px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
+    .form-card { background: var(--sky-mid); border-radius: 20px; padding: 48px 44px; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.06); }
     @media (max-width: 600px) { .form-card { padding: 32px 22px; } }
-    .section-eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
+    .section-eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+    .section-title { font-family: 'Syne', sans-serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 14px; }
     .section-sub { color: var(--gray-mid); max-width: 480px; margin: 0 auto 48px; line-height: 1.6; }
     .form-sub { color: var(--gray-mid); font-size: 0.88rem; margin-bottom: 32px; line-height: 1.5; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     @media (max-width: 520px) { .form-row { grid-template-columns: 1fr; } }
     .field { margin-bottom: 16px; }
-    label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--gray-mid);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 7px;
-    }
-    input[type="text"],
-    input[type="tel"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      background: var(--sky);
-      border: 1.5px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-sm);
-      color: var(--white);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      padding: 12px 16px;
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      -webkit-appearance: none;
+    label { display: block; font-size: 0.8rem; font-weight: 600; color: var(--gray-mid); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 7px; }
+    input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+      width: 100%; background: var(--sky); border: 1.5px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); color: var(--white); font-family: 'Inter', sans-serif; font-size: 0.95rem; padding: 12px 16px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; -webkit-appearance: none;
     }
     select option { background: var(--sky-mid); color: var(--white); }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--sun);
-      box-shadow: 0 0 0 3px rgba(245,168,0,0.12);
-    }
+    input:focus, select:focus, textarea:focus { border-color: var(--sun); box-shadow: 0 0 0 3px rgba(245,168,0,0.12); }
     input::placeholder, textarea::placeholder { color: var(--gray-text); }
-
     #company-name-field { margin-top: 10px; display: none; }
     #company-name-field.visible { display: block; }
-
-    .location-confirm {
-      background: rgba(245,168,0,0.08);
-      border: 1px solid rgba(245,168,0,0.25);
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      margin-bottom: 14px;
-      display: none;
-    }
+    .location-confirm { background: rgba(245,168,0,0.08); border: 1px solid rgba(245,168,0,0.25); border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 14px; display: none; }
     .location-confirm.visible { display: block; }
     .location-confirm p { font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 10px; }
     .confirm-btns { display: flex; gap: 10px; flex-wrap: wrap; }
-    .btn-yes, .btn-no {
-      border: none;
-      border-radius: 6px;
-      padding: 8px 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
+    .btn-yes, .btn-no { border: none; border-radius: 6px; padding: 8px 20px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
     .btn-yes { background: var(--accent); color: var(--sky); }
     .btn-no { background: rgba(255,255,255,0.1); color: var(--white); }
     .btn-yes:hover, .btn-no:hover { opacity: 0.85; }
-
     .location-inner { display: flex; gap: 10px; align-items: flex-start; }
     .location-inner input { flex: 1; }
-    .btn-locate {
-      background: rgba(0,201,167,0.15);
-      border: 1.5px solid var(--accent);
-      color: var(--accent);
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      cursor: pointer;
-      transition: background 0.2s;
-      white-space: nowrap;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
+    .btn-locate { background: rgba(0,201,167,0.15); border: 1.5px solid var(--accent); color: var(--accent); border-radius: var(--radius-sm); padding: 12px 14px; cursor: pointer; transition: background 0.2s; white-space: nowrap; flex-shrink: 0; display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 600; }
     .btn-locate:hover { background: rgba(0,201,167,0.25); }
     .location-hint { font-size: 0.78rem; color: var(--gray-text); margin-top: 7px; line-height: 1.4; }
-    .location-tag {
-      display: none;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.8rem;
-      color: var(--accent);
-      margin-top: 8px;
-      font-weight: 500;
-    }
+    .location-tag { display: none; align-items: center; gap: 6px; font-size: 0.8rem; color: var(--accent); margin-top: 8px; font-weight: 500; }
     .location-tag.visible { display: flex; }
-
-    .gps-notice {
-      display: none;
-      background: rgba(232,64,64,0.1);
-      border: 1px solid rgba(232,64,64,0.35);
-      border-radius: var(--radius-sm);
-      padding: 12px 14px;
-      margin-top: 10px;
-      font-size: 0.83rem;
-      color: #ffb3b3;
-      line-height: 1.5;
-    }
+    .gps-notice { display: none; background: rgba(232,64,64,0.1); border: 1px solid rgba(232,64,64,0.35); border-radius: var(--radius-sm); padding: 12px 14px; margin-top: 10px; font-size: 0.83rem; color: #ffb3b3; line-height: 1.5; }
     .gps-notice.visible { display: block; }
-
     .manual-or { font-size: 0.78rem; color: var(--gray-text); margin: 8px 0 4px; text-align: center; }
-    .manual-coords-toggle {
-      background: none;
-      border: 1px solid rgba(255,255,255,0.15);
-      color: var(--gray-mid);
-      border-radius: 6px;
-      padding: 6px 14px;
-      font-size: 0.78rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: block;
-      margin: 4px auto 0;
-    }
+    .manual-coords-toggle { background: none; border: 1px solid rgba(255,255,255,0.15); color: var(--gray-mid); border-radius: 6px; padding: 6px 14px; font-size: 0.78rem; cursor: pointer; transition: all 0.2s; display: block; margin: 4px auto 0; }
     .manual-coords-toggle:hover { border-color: var(--accent); color: var(--accent); }
     #manual-coords-group { display: none; margin-top: 8px; }
     #manual-coords-group.visible { display: block; }
-
-    /* ── FILE UPLOAD ── */
-    .upload-zone {
-      border: 2px dashed rgba(255,255,255,0.15);
-      border-radius: var(--radius);
-      padding: 32px 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: all 0.25s;
-      position: relative;
-      background: rgba(255,255,255,0.02);
-    }
+    .upload-zone { border: 2px dashed rgba(255,255,255,0.15); border-radius: var(--radius); padding: 32px 20px; text-align: center; cursor: pointer; transition: all 0.25s; position: relative; background: rgba(255,255,255,0.02); }
     .upload-zone:hover, .upload-zone.dragover { border-color: var(--sun); background: rgba(245,168,0,0.05); }
-    /* The hidden file input — fills the zone but pointer-events off so clicks go to JS handler */
-    #factura-file {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-      border: none;
-      padding: 0;
-      pointer-events: none; /* JS triggers it manually */
-    }
+    #factura-file { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; cursor: pointer; border: none; padding: 0; pointer-events: none; }
     .upload-icon { font-size: 2rem; margin-bottom: 10px; }
     .upload-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
     .upload-sub { font-size: 0.8rem; color: var(--gray-text); }
-
     .upload-preview-list { margin-top: 10px; display: none; }
     .upload-preview-list.visible { display: block; }
-    .upload-preview-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(0,201,167,0.08);
-      border: 1px solid rgba(0,201,167,0.25);
-      border-radius: var(--radius-sm);
-      padding: 10px 14px;
-      margin-bottom: 6px;
-      font-size: 0.85rem;
-    }
+    .upload-preview-item { display: flex; align-items: center; gap: 10px; background: rgba(0,201,167,0.08); border: 1px solid rgba(0,201,167,0.25); border-radius: var(--radius-sm); padding: 10px 14px; margin-bottom: 6px; font-size: 0.85rem; }
     .upload-preview-item span { flex: 1; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .btn-remove-item {
-      background: none;
-      border: none;
-      color: var(--red);
-      cursor: pointer;
-      font-size: 1rem;
-      padding: 2px 4px;
-      flex-shrink: 0;
-    }
-
-    /* Add-more button (shown after first image upload, hidden when PDF) */
-    .btn-add-more {
-      display: none;
-      width: 100%;
-      background: rgba(245,168,0,0.08);
-      border: 1.5px dashed rgba(245,168,0,0.4);
-      color: var(--sun);
-      border-radius: var(--radius-sm);
-      padding: 11px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 8px;
-      transition: background 0.2s;
-    }
+    .btn-remove-item { background: none; border: none; color: var(--red); cursor: pointer; font-size: 1rem; padding: 2px 4px; flex-shrink: 0; }
+    .btn-add-more { display: none; width: 100%; background: rgba(245,168,0,0.08); border: 1.5px dashed rgba(245,168,0,0.4); color: var(--sun); border-radius: var(--radius-sm); padding: 11px; font-size: 0.85rem; font-weight: 600; cursor: pointer; margin-top: 8px; transition: background 0.2s; }
     .btn-add-more.visible { display: block; }
     .btn-add-more:hover { background: rgba(245,168,0,0.14); }
-
-    .btn-submit {
-      width: 100%;
-      background: var(--sun);
-      color: var(--sky);
-      border: none;
-      border-radius: var(--radius);
-      padding: 17px;
-      font-family: 'Syne', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin-top: 8px;
-      letter-spacing: 0.01em;
-    }
+    .btn-submit { width: 100%; background: var(--sun); color: var(--sky); border: none; border-radius: var(--radius); padding: 17px; font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; cursor: pointer; transition: background 0.2s, transform 0.15s; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px; letter-spacing: 0.01em; }
     .btn-submit:hover { background: var(--sun-dark); transform: translateY(-1px); }
     .btn-submit:active { transform: translateY(0); }
     .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .form-legal { font-size: 0.75rem; color: var(--gray-text); text-align: center; margin-top: 14px; line-height: 1.5; }
-
     .success-state { display: none; text-align: center; padding: 32px 0; }
     .success-state.visible { display: block; }
     .success-icon { font-size: 4rem; margin-bottom: 16px; animation: pop 0.4s cubic-bezier(0.26, 1.8, 0.46, 0.9); }
     @keyframes pop { 0% { transform: scale(0); } 100% { transform: scale(1); } }
     .success-title { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; margin-bottom: 10px; }
     .success-sub { color: var(--gray-mid); line-height: 1.6; }
-
     .why-section { padding: 80px 5%; background: var(--sky-mid); text-align: center; }
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto; }
     .why-card { background: var(--sky); border-radius: var(--radius); padding: 28px 22px; text-align: left; }
     .why-icon { font-size: 1.8rem; margin-bottom: 14px; }
     .why-card h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 7px; }
     .why-card p { font-size: 0.85rem; color: var(--gray-mid); line-height: 1.55; }
-
     .companies-section { padding: 60px 5%; background: var(--sky); text-align: center; }
     .companies-label { font-size: 0.75rem; letter-spacing: 0.1em; color: var(--gray-text); text-transform: uppercase; margin-bottom: 24px; }
     .companies-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; max-width: 800px; margin: 0 auto; }
-    .company-badge {
-      background: var(--sky-mid);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 50px;
-      padding: 9px 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--gray-mid);
-      white-space: nowrap;
-    }
-
+    .company-badge { background: var(--sky-mid); border: 1px solid rgba(255,255,255,0.08); border-radius: 50px; padding: 9px 20px; font-size: 0.82rem; font-weight: 600; color: var(--gray-mid); white-space: nowrap; }
     .batteries-section { padding: 80px 5%; background: var(--sky-mid); text-align: center; }
-    .batteries-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
+    .batteries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; max-width: 700px; margin: 0 auto; }
     .battery-card { background: var(--sky); border-radius: var(--radius); padding: 32px 24px; text-align: center; }
     .battery-logo { font-family: 'Syne', sans-serif; font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
     .battery-logo.tesla { color: #E82127; }
     .battery-logo.enphase { color: #F37A20; }
     .battery-card p { font-size: 0.85rem; color: var(--gray-mid); line-height: 1.55; }
-
-    footer {
-      background: #070F1C;
-      padding: 40px 5%;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
+    footer { background: #070F1C; padding: 40px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
     footer p { font-size: 0.82rem; color: var(--gray-text); line-height: 1.7; }
     footer strong { color: var(--sun); }
-
-    .loading-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(11,31,58,0.75);
-      z-index: 999;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 16px;
-    }
+    .loading-overlay { display: none; position: fixed; inset: 0; background: rgba(11,31,58,0.75); z-index: 999; align-items: center; justify-content: center; flex-direction: column; gap: 16px; }
     .loading-overlay.visible { display: flex; }
-    .spinner {
-      width: 44px;
-      height: 44px;
-      border: 3px solid rgba(245,168,0,0.2);
-      border-top-color: var(--sun);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
+    .spinner { width: 44px; height: 44px; border: 3px solid rgba(245,168,0,0.2); border-top-color: var(--sun); border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .loading-text { font-size: 0.9rem; color: var(--gray-mid); }
     .loading-progress { font-size: 0.78rem; color: var(--gray-text); margin-top: 4px; }
-
-    .toast {
-      position: fixed;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%) translateY(80px);
-      background: var(--sky-light);
-      color: var(--white);
-      border-radius: 50px;
-      padding: 12px 24px;
-      font-size: 0.88rem;
-      font-weight: 500;
-      box-shadow: var(--shadow);
-      z-index: 200;
-      transition: transform 0.35s cubic-bezier(0.26, 1.4, 0.46, 1);
-      border: 1px solid rgba(255,255,255,0.08);
-      max-width: 90vw;
-      text-align: center;
-    }
+    .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--sky-light); color: var(--white); border-radius: 50px; padding: 12px 24px; font-size: 0.88rem; font-weight: 500; box-shadow: var(--shadow); z-index: 200; transition: transform 0.35s cubic-bezier(0.26, 1.4, 0.46, 1); border: 1px solid rgba(255,255,255,0.08); max-width: 90vw; text-align: center; }
     .toast.show { transform: translateX(-50%) translateY(0); }
     .toast.error { border-color: var(--red); background: rgba(232,64,64,0.15); }
     .toast.success { border-color: var(--accent); background: rgba(0,201,167,0.12); }
-
     .divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); margin: 0; }
-
-    /* Factura modal */
-    .factura-modal-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(7,15,28,0.85);
-      z-index: 500;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
+    .factura-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(7,15,28,0.85); z-index: 500; align-items: center; justify-content: center; padding: 20px; }
     .factura-modal-overlay.visible { display: flex; }
-    .factura-modal {
-      background: var(--sky-mid);
-      border-radius: 16px;
-      max-width: 520px;
-      width: 100%;
-      padding: 36px 32px;
-      position: relative;
-      border: 1px solid rgba(245,168,0,0.3);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
+    .factura-modal { background: var(--sky-mid); border-radius: 16px; max-width: 520px; width: 100%; padding: 36px 32px; position: relative; border: 1px solid rgba(245,168,0,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
     .factura-modal-icon { font-size: 2.5rem; margin-bottom: 14px; }
-    .factura-modal h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--sun);
-      margin-bottom: 12px;
-    }
+    .factura-modal h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--sun); margin-bottom: 12px; }
     .factura-modal p { font-size: 0.9rem; color: var(--gray-mid); line-height: 1.65; margin-bottom: 10px; }
     .factura-modal-actions { margin-top: 20px; display: flex; justify-content: flex-end; }
-    .btn-modal-ok {
-      background: var(--sun);
-      color: var(--sky);
-      border: none;
-      border-radius: 50px;
-      padding: 11px 28px;
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+    .btn-modal-ok { background: var(--sun); color: var(--sky); border: none; border-radius: 50px; padding: 11px 28px; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; cursor: pointer; transition: background 0.2s; }
     .btn-modal-ok:hover { background: var(--sun-dark); }
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <header>
     <a href="#" class="logo">
-      <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="19" cy="19" r="18" fill="#0B1F3A" stroke="#F5A800" stroke-width="1.5"/>
-        <circle cx="19" cy="19" r="7" fill="#F5A800"/>
-        <line x1="19" y1="4" x2="19" y2="8" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="19" y1="30" x2="19" y2="34" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="4" y1="19" x2="8" y2="19" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="30" y1="19" x2="34" y2="19" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="8.1" y1="8.1" x2="11" y2="11" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="27" y1="27" x2="29.9" y2="29.9" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="29.9" y1="8.1" x2="27" y2="11" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="11" y1="27" x2="8.1" y2="29.9" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <path d="M20 14L17 20H20.5L18 26L22 19H18.5L20 14Z" fill="#0B1F3A"/>
-      </svg>
+      <svg class="logo-icon" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="19" cy="19" r="18" fill="#0B1F3A" stroke="#F5A800" stroke-width="1.5"/><circle cx="19" cy="19" r="7" fill="#F5A800"/><line x1="19" y1="4" x2="19" y2="8" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/><line x1="19" y1="30" x2="19" y2="34" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/><line x1="4" y1="19" x2="8" y2="19" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/><line x1="30" y1="19" x2="34" y2="19" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/><path d="M20 14L17 20H20.5L18 26L22 19H18.5L20 14Z" fill="#0B1F3A"/></svg>
       <div class="logo-text">Tu Gestor <span>Solar</span><br><small style="font-size:0.65rem;color:#6E7A8A;font-weight:400;font-family:Inter,sans-serif;letter-spacing:0.04em;">PUERTO RICO</small></div>
     </a>
     <a href="#cotizar" class="nav-cta">Cotizar Gratis →</a>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-sun"></div>
-    <div class="hero-content">
-      <div class="hero-badge">☀️ #1 Plataforma Solar en Puerto Rico</div>
-      <h1>Tu <em>pago más bajo</em> en<br>energía solar, garantizado</h1>
-      <p class="hero-sub">Compara cotizaciones de placas solares con las mejores opciones del mercado en Puerto Rico. Batería Tesla Powerwall y Batería Enphase disponibles. Alquiler de placas solares también disponible.</p>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num">6+</span>
-          <span class="stat-label">Compañías disponibles</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">24h</span>
-          <span class="stat-label">Cotización gratis</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">$0</span>
-          <span class="stat-label">Costo del servicio</span>
-        </div>
-      </div>
-      <a href="#cotizar" class="hero-scroll">Comenzar ahora ↓</a>
-    </div>
-  </section>
+  <section class="hero"><div class="hero-bg"></div><div class="hero-sun"></div><div class="hero-content"><div class="hero-badge">☀️ #1 Plataforma Solar en Puerto Rico</div><h1>Tu <em>pago más bajo</em> en<br>energía solar, garantizado</h1><p class="hero-sub">Compara cotizaciones de placas solares con las mejores opciones del mercado en Puerto Rico. Batería Tesla Powerwall y Batería Enphase disponibles. Alquiler de placas solares también disponible.</p><div class="hero-stats"><div class="stat"><span class="stat-num">6+</span><span class="stat-label">Compañías disponibles</span></div><div class="stat"><span class="stat-num">24h</span><span class="stat-label">Cotización gratis</span></div><div class="stat"><span class="stat-num">$0</span><span class="stat-label">Costo del servicio</span></div></div><a href="#cotizar" class="hero-scroll">Comenzar ahora ↓</a></div></section>
 
   <div class="divider"></div>
-
-  <!-- COMPANIES STRIP -->
-  <section class="companies-section">
-    <p class="companies-label">Acceso a las mejores opciones del mercado solar en Puerto Rico</p>
-    <div class="companies-logos">
-      <span class="company-badge">☀️ Instaladores certificados</span>
-      <span class="company-badge">🔋 Batería Tesla Powerwall</span>
-      <span class="company-badge">⚡ Batería Enphase 10.08kWh</span>
-      <span class="company-badge">🏠 Alquiler de placas solares</span>
-      <span class="company-badge">📋 Cotización gratis en 24h</span>
-    </div>
-  </section>
-
+  <section class="companies-section"><p class="companies-label">Acceso a las mejores opciones del mercado solar en Puerto Rico</p><div class="companies-logos"><span class="company-badge">☀️ Instaladores certificados</span><span class="company-badge">🔋 Batería Tesla Powerwall</span><span class="company-badge">⚡ Batería Enphase 10.08kWh</span><span class="company-badge">🏠 Alquiler de placas solares</span><span class="company-badge">📋 Cotización gratis en 24h</span></div></section>
   <div class="divider"></div>
 
-  <!-- FORM SECTION -->
   <section class="form-section" id="cotizar">
     <div class="form-wrapper">
-      <div style="text-align:center;margin-bottom:36px;">
-        <p class="section-eyebrow">Cotización gratis</p>
-        <h2 class="section-title">Completa tu solicitud</h2>
-        <p class="section-sub" style="margin-bottom:0">Llena el formulario y te enviamos tu cotización personalizada en menos de 24 horas. Sin costo, sin compromiso.</p>
-      </div>
-
+      <div style="text-align:center;margin-bottom:36px;"><p class="section-eyebrow">Cotización gratis</p><h2 class="section-title">Completa tu solicitud</h2><p class="section-sub" style="margin-bottom:0">Llena el formulario y te enviamos tu cotización personalizada en menos de 24 horas. Sin costo, sin compromiso.</p></div>
       <div class="form-card">
         <div id="form-body">
           <p class="form-sub">Todos los campos son requeridos para preparar tu cotización.</p>
-
-          <!-- NAME -->
-          <div class="form-row">
-            <div class="field">
-              <label for="nombre">Nombre</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Juan" autocomplete="given-name" />
-            </div>
-            <div class="field">
-              <label for="apellido">Apellido</label>
-              <input type="text" id="apellido" name="apellido" placeholder="García" autocomplete="family-name" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="787-000-0000" autocomplete="tel" />
-          </div>
-
-          <div class="field">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="juan@email.com" autocomplete="email" />
-          </div>
-
-          <!-- COTIZAR MODE -->
-          <div class="field">
-            <label for="modo-cotizar">¿Cómo deseas cotizar?</label>
-            <select id="modo-cotizar" name="modoCotizar" onchange="handleModoChange()">
-              <option value="">-- Selecciona una opción --</option>
-              <option value="lowest">Pago más bajo de la industria</option>
-              <option value="company">Cotizar con una compañía específica</option>
-            </select>
-          </div>
-
-          <div class="field" id="company-name-field">
-            <label for="company-input">Nombre de la compañía</label>
-            <input type="text" id="company-input" name="companyName"
-              placeholder="Escribe el nombre de la compañía..."
-              oninput="selectedCompany = this.value.trim()" />
-            <p style="font-size:0.78rem;color:#6E7A8A;margin-top:6px;">Escribe el nombre exacto de la compañía con la que deseas cotizar.</p>
-          </div>
-
-          <!-- LOCATION -->
-          <div class="field">
-            <label>Ubicación de la residencia</label>
-
-            <div class="location-confirm visible" id="loc-confirm">
-              <p>¿Estás en tu residencia en este momento?</p>
-              <div class="confirm-btns">
-                <button class="btn-yes" onclick="handleHome(true)" type="button">Sí, estoy en casa</button>
-                <button class="btn-no" onclick="handleHome(false)" type="button">No, ingresaré la dirección</button>
-              </div>
-            </div>
-
-            <!-- GPS flow -->
-            <div id="loc-gps" style="display:none;">
-              <div class="location-inner">
-                <input type="text" id="ubicacion" name="ubicacion" placeholder="Presiona el botón para detectar tu ubicación..." readonly />
-                <button class="btn-locate" onclick="requestGPS()" type="button" id="btn-gps">
-                  📍 Detectar
-                </button>
-              </div>
-              <div class="location-tag" id="loc-tag">✅ Ubicación capturada exitosamente</div>
-              <div class="gps-notice" id="gps-notice">
-                <strong>No se pudo acceder al GPS.</strong><br>
-                Para continuar necesitas autorizar el acceso a tu ubicación.<br><br>
-                <strong>En iPhone/Safari:</strong> Ve a Ajustes → Safari → Ubicación → Permitir.<br>
-                <strong>En Android/Chrome:</strong> Toca el ícono de candado en la barra del navegador → Permisos → Ubicación → Permitir.<br>
-                <strong>En computadora:</strong> Haz clic en el ícono de candado en la barra de dirección y permite la ubicación.<br><br>
-                Luego de autorizar, presiona "Detectar" nuevamente.
-              </div>
-              <p class="location-hint">Tu ubicación se usa solo para preparar tu cotización. No se comparte con terceros.</p>
-            </div>
-
-            <!-- Manual flow -->
-            <div id="loc-manual" style="display:none;">
-              <input type="text" id="ubicacion-manual" name="ubicacionManual"
-                placeholder="Ej: Calle Sol 123, Ponce, PR 00731" />
-              <p class="location-hint">Escribe la dirección física completa de la residencia.</p>
-              <p class="manual-or">— o bien —</p>
-              <button class="manual-coords-toggle" type="button" onclick="toggleManualCoords()">Ingresar coordenadas manualmente</button>
-              <div id="manual-coords-group">
-                <div class="form-row" style="margin-top:8px;">
-                  <div>
-                    <label for="manual-lat" style="margin-top:0;">Latitud</label>
-                    <input type="text" id="manual-lat" placeholder="18.4655" />
-                  </div>
-                  <div>
-                    <label for="manual-lng" style="margin-top:0;">Longitud</label>
-                    <input type="text" id="manual-lng" placeholder="-66.1057" />
-                  </div>
-                </div>
-                <p class="location-hint">Puedes encontrar las coordenadas abriendo Google Maps y presionando tu dirección.</p>
-              </div>
-            </div>
-
-            <input type="hidden" id="lat" name="lat" />
-            <input type="hidden" id="lng" name="lng" />
-          </div>
-
-          <!-- FACTURA UPLOAD -->
-          <div class="field">
-            <label>Factura de LUMA Energy</label>
-
-            <!--
-              UPLOAD ZONE — clicking it shows the aviso modal first.
-              The actual <input type="file"> is triggered by JS AFTER the modal is confirmed.
-              multiple attribute allows picking several images at once (iOS/Android shows camera/gallery/files sheet).
-            -->
-            <div class="upload-zone" id="upload-zone"
-                 ondrop="handleDrop(event)"
-                 ondragover="event.preventDefault(); this.classList.add('dragover')"
-                 ondragleave="this.classList.remove('dragover')"
-                 onclick="handleZoneClick()">
-              <!-- Hidden input — triggered manually via JS -->
-              <input type="file" id="factura-file" name="factura"
-                     accept="image/*,.heic,.heif,.pdf"
-                     multiple
-                     style="display:none;"
-                     onchange="handleFileSelect(event)" />
-              <div class="upload-icon">📄</div>
-              <p class="upload-title">Sube tu factura de LUMA</p>
-              <p class="upload-sub" id="upload-sub-text">PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Toca para seleccionar</p>
-            </div>
-
-            <!-- Preview list of selected files -->
-            <div class="upload-preview-list" id="upload-preview-list"></div>
-
-            <!-- Add more images button (visible only when images selected, hidden for PDF) -->
-            <button class="btn-add-more" id="btn-add-more" type="button" onclick="openFileInput()">
-              + Agregar otra página / foto
-            </button>
-          </div>
-
-          <button class="btn-submit" id="btn-submit" onclick="submitForm()" type="button">
-            ☀️ Enviar y recibir cotización gratis
-          </button>
-          <p class="form-legal">Al enviar, aceptas que nos contactemos contigo para presentarte tu cotización solar. Sin compromiso ni costo alguno.</p>
+          <div class="form-row"><div class="field"><label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Juan" autocomplete="given-name" /></div><div class="field"><label for="apellido">Apellido</label><input type="text" id="apellido" name="apellido" placeholder="García" autocomplete="family-name" /></div></div>
+          <div class="field"><label for="telefono">Teléfono</label><input type="tel" id="telefono" name="telefono" placeholder="787-000-0000" autocomplete="tel" /></div>
+          <div class="field"><label for="email">Correo electrónico</label><input type="email" id="email" name="email" placeholder="juan@email.com" autocomplete="email" /></div>
+          <div class="field"><label for="modo-cotizar">¿Cómo deseas cotizar?</label><select id="modo-cotizar" name="modoCotizar" onchange="handleModoChange()"><option value="">-- Selecciona una opción --</option><option value="lowest">Pago más bajo de la industria</option><option value="company">Cotizar con una compañía específica</option></select></div>
+          <div class="field" id="company-name-field"><label for="company-input">Nombre de la compañía</label><input type="text" id="company-input" name="companyName" placeholder="Escribe el nombre de la compañía..." oninput="selectedCompany = this.value.trim()" /><p style="font-size:0.78rem;color:#6E7A8A;margin-top:6px;">Escribe el nombre exacto de la compañía con la que deseas cotizar.</p></div>
+          <div class="field"><label>Ubicación de la residencia</label><div class="location-confirm visible" id="loc-confirm"><p>¿Estás en tu residencia en este momento?</p><div class="confirm-btns"><button class="btn-yes" onclick="handleHome(true)" type="button">Sí, estoy en casa</button><button class="btn-no" onclick="handleHome(false)" type="button">No, ingresaré la dirección</button></div></div><div id="loc-gps" style="display:none;"><div class="location-inner"><input type="text" id="ubicacion" name="ubicacion" placeholder="Presiona el botón para detectar tu ubicación..." readonly /><button class="btn-locate" onclick="requestGPS()" type="button" id="btn-gps">📍 Detectar</button></div><div class="location-tag" id="loc-tag">✅ Ubicación capturada exitosamente</div><div class="gps-notice" id="gps-notice"><strong>No se pudo acceder al GPS.</strong><br>Para continuar necesitas autorizar el acceso a tu ubicación.<br><br><strong>En iPhone/Safari:</strong> Ve a Ajustes → Safari → Ubicación → Permitir.<br><strong>En Android/Chrome:</strong> Toca el ícono de candado en la barra del navegador → Permisos → Ubicación → Permitir.<br><strong>En computadora:</strong> Haz clic en el ícono de candado en la barra de dirección y permite la ubicación.<br><br>Luego de autorizar, presiona "Detectar" nuevamente.</div><p class="location-hint">Tu ubicación se usa solo para preparar tu cotización. No se comparte con terceros.</p></div><div id="loc-manual" style="display:none;"><input type="text" id="ubicacion-manual" name="ubicacionManual" placeholder="Ej: Calle Sol 123, Ponce, PR 00731" /><p class="location-hint">Escribe la dirección física completa de la residencia.</p><p class="manual-or">— o bien —</p><button class="manual-coords-toggle" type="button" onclick="toggleManualCoords()">Ingresar coordenadas manualmente</button><div id="manual-coords-group"><div class="form-row" style="margin-top:8px;"><div><label for="manual-lat" style="margin-top:0;">Latitud</label><input type="text" id="manual-lat" placeholder="18.4655" /></div><div><label for="manual-lng" style="margin-top:0;">Longitud</label><input type="text" id="manual-lng" placeholder="-66.1057" /></div></div><p class="location-hint">Puedes encontrar las coordenadas abriendo Google Maps y presionando tu dirección.</p></div></div><input type="hidden" id="lat" name="lat" /><input type="hidden" id="lng" name="lng" /></div>
+          <div class="field"><label>Factura de LUMA Energy</label><div class="upload-zone" id="upload-zone" ondrop="handleDrop(event)" ondragover="event.preventDefault(); this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" onclick="handleZoneClick()"><input type="file" id="factura-file" name="factura" accept="image/*,.heic,.heif,.pdf" multiple style="display:none;" onchange="handleFileSelect(event)" /><div class="upload-icon">📄</div><p class="upload-title">Sube tu factura de LUMA</p><p class="upload-sub" id="upload-sub-text">PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Toca para seleccionar</p></div><div class="upload-preview-list" id="upload-preview-list"></div><button class="btn-add-more" id="btn-add-more" type="button" onclick="openFileInput()">+ Agregar otra página / foto</button></div>
+          <button class="btn-submit" id="btn-submit" onclick="submitForm()" type="button">☀️ Enviar y recibir cotización gratis</button><p class="form-legal">Al enviar, aceptas que nos contactemos contigo para presentarte tu cotización solar. Sin compromiso ni costo alguno.</p>
         </div>
-
-        <!-- SUCCESS STATE -->
-        <div class="success-state" id="success-state">
-          <div class="success-icon">🎉</div>
-          <h3 class="success-title">¡Solicitud enviada!</h3>
-          <p class="success-sub">Recibimos tu información y tu factura de LUMA. Te contactaremos en menos de <strong style="color:var(--sun)">24 horas</strong> con tu cotización personalizada.<br><br>Revisa tu correo electrónico y WhatsApp.</p>
-        </div>
+        <div class="success-state" id="success-state"><div class="success-icon">🎉</div><h3 class="success-title">¡Solicitud enviada!</h3><p class="success-sub">Recibimos tu información y tu factura de LUMA. Te contactaremos en menos de <strong style="color:var(--sun)">24 horas</strong> con tu cotización personalizada.<br><br>Revisa tu correo electrónico y WhatsApp.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- WHY SECTION -->
-  <section class="why-section">
-    <p class="section-eyebrow">¿Por qué Tu Gestor Solar?</p>
-    <h2 class="section-title" style="margin-bottom:40px;">Sin complicaciones. Sin presión.</h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🆓</div>
-        <h3>100% Gratuito</h3>
-        <p>Nuestro servicio de cotización no tiene ningún costo para ti. Siempre.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">⚡</div>
-        <h3>Cotización en 24 horas</h3>
-        <p>Analizamos tu factura de LUMA y te enviamos opciones reales y personalizadas.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔍</div>
-        <h3>Comparamos por ti</h3>
-        <p>Gestionamos tu cotización con múltiples instaladores certificados en Puerto Rico.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🤝</div>
-        <h3>Sin compromiso</h3>
-        <p>Recibes la cotización y decides tú. Sin presión, sin llamadas no deseadas.</p>
-      </div>
-    </div>
-  </section>
+  <section class="why-section"><p class="section-eyebrow">¿Por qué Tu Gestor Solar?</p><h2 class="section-title" style="margin-bottom:40px;">Sin complicaciones. Sin presión.</h2><div class="why-grid"><div class="why-card"><div class="why-icon">🆓</div><h3>100% Gratuito</h3><p>Nuestro servicio de cotización no tiene ningún costo para ti. Siempre.</p></div><div class="why-card"><div class="why-icon">⚡</div><h3>Cotización en 24 horas</h3><p>Analizamos tu factura de LUMA y te enviamos opciones reales y personalizadas.</p></div><div class="why-card"><div class="why-icon">🔍</div><h3>Comparamos por ti</h3><p>Gestionamos tu cotización con múltiples instaladores certificados en Puerto Rico.</p></div><div class="why-card"><div class="why-icon">🤝</div><h3>Sin compromiso</h3><p>Recibes la cotización y decides tú. Sin presión, sin llamadas no deseadas.</p></div></div></section>
+  <section class="batteries-section"><p class="section-eyebrow">Almacenamiento de energía</p><h2 class="section-title">Batería Tesla Powerwall<br>y Batería Enphase</h2><p class="section-sub">Las dos soluciones de batería más confiables para Puerto Rico. Cotiza tu sistema con o sin batería de almacenamiento.</p><div class="batteries-grid"><div class="battery-card"><div class="battery-logo tesla">Tesla Powerwall</div><p>13.5 kWh de capacidad. Ideal para hogares que buscan máxima autonomía energética. Compatible con la mayoría de paneles solares.</p></div><div class="battery-card"><div class="battery-logo enphase">Enphase</div><p>Sistema modular y escalable. 10.08 kWh por batería, expandible. Monitoreo en tiempo real desde tu celular.</p></div></div></section>
+  <footer><div style="margin-bottom:16px;"><strong>Tu Gestor Solar PR</strong></div><p>Placas solares en Puerto Rico · Batería Tesla Powerwall · Batería Enphase · Alquiler de placas solares<br>Instaladores certificados · Energía solar residencial · Cotización gratis en 24 horas<br><br>© 2026 Tu Gestor Solar PR — Servicio gratuito de cotización solar · San Juan, Puerto Rico</p><p style="margin-top:14px;"><a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;" style="color:#6E7A8A;font-size:0.78rem;text-decoration:underline;text-underline-offset:3px;">Política de Privacidad</a></p></footer>
 
-  <!-- BATTERIES -->
-  <section class="batteries-section">
-    <p class="section-eyebrow">Almacenamiento de energía</p>
-    <h2 class="section-title">Batería Tesla Powerwall<br>y Batería Enphase</h2>
-    <p class="section-sub">Las dos soluciones de batería más confiables para Puerto Rico. Cotiza tu sistema con o sin batería de almacenamiento.</p>
-    <div class="batteries-grid">
-      <div class="battery-card">
-        <div class="battery-logo tesla">Tesla Powerwall</div>
-        <p>13.5 kWh de capacidad. Ideal para hogares que buscan máxima autonomía energética. Compatible con la mayoría de paneles solares.</p>
-      </div>
-      <div class="battery-card">
-        <div class="battery-logo enphase">Enphase</div>
-        <p>Sistema modular y escalable. 10.08 kWh por batería, expandible. Monitoreo en tiempo real desde tu celular.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div style="margin-bottom:16px;">
-      <svg width="32" height="32" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;margin-right:8px;">
-        <circle cx="19" cy="19" r="18" fill="#0B1F3A" stroke="#F5A800" stroke-width="1.5"/>
-        <circle cx="19" cy="19" r="7" fill="#F5A800"/>
-        <line x1="19" y1="4" x2="19" y2="8" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="19" y1="30" x2="19" y2="34" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="4" y1="19" x2="8" y2="19" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <line x1="30" y1="19" x2="34" y2="19" stroke="#F5A800" stroke-width="2" stroke-linecap="round"/>
-        <path d="M20 14L17 20H20.5L18 26L22 19H18.5L20 14Z" fill="#0B1F3A"/>
-      </svg>
-      <strong>Tu Gestor Solar PR</strong>
-    </div>
-    <p>Placas solares en Puerto Rico · Batería Tesla Powerwall · Batería Enphase · Alquiler de placas solares<br>
-    Instaladores certificados · Energía solar residencial · Cotización gratis en 24 horas<br><br>
-    © 2026 Tu Gestor Solar PR — Servicio gratuito de cotización solar · San Juan, Puerto Rico</p>
-    <p style="margin-top:14px;">
-      <a href="#" onclick="document.getElementById('privacy-modal').style.display='flex'; return false;"
-         style="color:#6E7A8A;font-size:0.78rem;text-decoration:underline;text-underline-offset:3px;">
-        Política de Privacidad
-      </a>
-    </p>
-  </footer>
-
-  <!-- PRIVACY MODAL -->
-  <div id="privacy-modal"
-       style="display:none;position:fixed;inset:0;background:rgba(7,15,28,0.85);z-index:500;align-items:center;justify-content:center;padding:20px;"
-       onclick="if(event.target===this)this.style.display='none'">
-    <div style="background:#132B52;border-radius:16px;max-width:620px;width:100%;max-height:85vh;overflow-y:auto;padding:40px 36px;position:relative;border:1px solid rgba(255,255,255,0.08);box-shadow:0 20px 60px rgba(0,0,0,0.5);">
-      <button onclick="document.getElementById('privacy-modal').style.display='none'"
-              style="position:absolute;top:16px;right:18px;background:rgba(255,255,255,0.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;">✕</button>
-      <h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#F5A800;margin-bottom:6px;">Política de Privacidad</h2>
-      <p style="font-size:0.78rem;color:#6E7A8A;margin-bottom:24px;">Tu Gestor Solar PR · San Juan, Puerto Rico · Última actualización: junio 2026</p>
-      <div style="font-size:0.88rem;color:#B0BAC9;line-height:1.7;">
-        <h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">1. Información que recopilamos</h3>
-        <p style="margin-bottom:16px;">Al completar el formulario de cotización, recopilamos: nombre y apellido, número de teléfono, dirección de correo electrónico, ubicación geográfica (coordenadas GPS o dirección física ingresada manualmente), y la factura de LUMA Energy que usted suba voluntariamente.</p>
-        <h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">2. Uso de la información</h3>
-        <p style="margin-bottom:16px;">La información recopilada se utiliza exclusivamente para preparar y enviarle una cotización de energía solar personalizada y contactarle con el propósito de presentarle dicha cotización.</p>
-        <h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">3. Almacenamiento de datos</h3>
-        <p style="margin-bottom:16px;">Sus datos se almacenan de forma segura en Google Sheets y Google Drive, con acceso restringido al equipo autorizado de Tu Gestor Solar PR. Los archivos subidos se almacenan en Cloudinary y Google Drive bajo protocolo HTTPS.</p>
-        <h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">4. Geolocalización</h3>
-        <p style="margin-bottom:16px;">Si usted otorga permiso al navegador para acceder a su ubicación GPS, capturamos las coordenadas únicamente con el propósito de incluirlas en su cotización solar. Esta acción es completamente voluntaria.</p>
-        <h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">5. Sus derechos</h3>
-        <p style="margin-bottom:16px;">Puede solicitar acceso, corrección o eliminación de sus datos en cualquier momento escribiendo a <strong style="color:#F5A800;">jerrysocialmediapr@gmail.com</strong>.</p>
-        <h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">6. Contacto</h3>
-        <p><strong style="color:#F5A800;">Tu Gestor Solar PR</strong> · San Juan, Puerto Rico · <a href="mailto:jerrysocialmediapr@gmail.com" style="color:#00C9A7;">jerrysocialmediapr@gmail.com</a></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- FACTURA IMPORTANT NOTICE MODAL -->
-  <div class="factura-modal-overlay" id="factura-modal">
-    <div class="factura-modal">
-      <div class="factura-modal-icon">⚠️</div>
-      <h3>IMPORTANTE: Sube todas las páginas</h3>
-      <p>Necesitamos la factura de luz con <strong style="color:var(--white)">todas sus páginas</strong> para poder realizar la cotización correctamente.</p>
-      <p>No subas una sola página si tu factura tiene más de una. De lo contrario, <strong style="color:var(--sun)">no podremos preparar la cotización correctamente.</strong></p>
-      <p style="font-size:0.82rem;">Si tienes la factura en PDF, sube el PDF completo. Si tienes fotos, sube una foto por página.</p>
-      <div class="factura-modal-actions">
-        <button class="btn-modal-ok" id="btn-modal-ok" type="button" onclick="confirmFacturaModal()">Entendido, continuar</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- LOADING -->
-  <div class="loading-overlay" id="loading">
-    <div class="spinner"></div>
-    <p class="loading-text" id="loading-text">Enviando tu solicitud…</p>
-    <p class="loading-progress" id="loading-progress"></p>
-  </div>
-
-  <!-- TOAST -->
+  <div id="privacy-modal" style="display:none;position:fixed;inset:0;background:rgba(7,15,28,0.85);z-index:500;align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)this.style.display='none'"><div style="background:#132B52;border-radius:16px;max-width:620px;width:100%;max-height:85vh;overflow-y:auto;padding:40px 36px;position:relative;border:1px solid rgba(255,255,255,0.08);box-shadow:0 20px 60px rgba(0,0,0,0.5);"><button onclick="document.getElementById('privacy-modal').style.display='none'" style="position:absolute;top:16px;right:18px;background:rgba(255,255,255,0.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;">✕</button><h2 style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#F5A800;margin-bottom:6px;">Política de Privacidad</h2><p style="font-size:0.78rem;color:#6E7A8A;margin-bottom:24px;">Tu Gestor Solar PR · San Juan, Puerto Rico · Última actualización: junio 2026</p><div style="font-size:0.88rem;color:#B0BAC9;line-height:1.7;"><h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">1. Información que recopilamos</h3><p style="margin-bottom:16px;">Al completar el formulario de cotización, recopilamos: nombre y apellido, número de teléfono, dirección de correo electrónico, ubicación geográfica, y la factura de LUMA Energy que usted suba voluntariamente.</p><h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">2. Uso de la información</h3><p style="margin-bottom:16px;">La información recopilada se utiliza exclusivamente para preparar y enviarle una cotización de energía solar personalizada.</p><h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">3. Almacenamiento de datos</h3><p style="margin-bottom:16px;">Sus datos se almacenan de forma segura en Google Sheets y Google Drive.</p><h3 style="color:#fff;font-size:1rem;margin:0 0 8px;">4. Contacto</h3><p><strong style="color:#F5A800;">Tu Gestor Solar PR</strong> · San Juan, Puerto Rico · <a href="mailto:jerrysocialmediapr@gmail.com" style="color:#00C9A7;">jerrysocialmediapr@gmail.com</a></p></div></div></div>
+  <div class="factura-modal-overlay" id="factura-modal"><div class="factura-modal"><div class="factura-modal-icon">⚠️</div><h3>IMPORTANTE: Sube todas las páginas</h3><p>Necesitamos la factura de luz con <strong style="color:var(--white)">todas sus páginas</strong> para poder realizar la cotización correctamente.</p><p>No subas una sola página si tu factura tiene más de una. De lo contrario, <strong style="color:var(--sun)">no podremos preparar la cotización correctamente.</strong></p><p style="font-size:0.82rem;">Si tienes la factura en PDF, sube el PDF completo. Si tienes fotos, sube una foto por página.</p><div class="factura-modal-actions"><button class="btn-modal-ok" id="btn-modal-ok" type="button" onclick="confirmFacturaModal()">Entendido, continuar</button></div></div></div>
+  <div class="loading-overlay" id="loading"><div class="spinner"></div><p class="loading-text" id="loading-text">Enviando tu solicitud…</p><p class="loading-progress" id="loading-progress"></p></div>
   <div class="toast" id="toast"></div>
 
   <script>
-    /* ── CONFIG ── */
     const CONFIG = {
       GAS_URL: "https://script.google.com/macros/s/AKfycbzB-jQKWUt62yUmVoxXMNbCQy80glsVsqRt8sF4sGNsCPmZ8k6eGr0q85f4lTrEnyPX/exec",
       CLOUDINARY_CLOUD: "df8xiv1mn",
@@ -982,28 +374,24 @@
       USE_CLOUDINARY: true,
     };
 
-    /* ── STATE ── */
-    let choiceMode      = "";
+    let choiceMode = "";
     let selectedCompany = "";
-    let selectedFiles   = [];
-    let locationData    = { type: "", address: "", lat: "", lng: "" };
+    let selectedFiles = [];
+    let locationData = { type: "", address: "", lat: "", lng: "" };
     let facturaModalConfirmed = false;
 
-    /* ── MODO COTIZAR ── */
     function handleModoChange() {
       const val = document.getElementById("modo-cotizar").value;
       choiceMode = val;
       const compField = document.getElementById("company-name-field");
-      if (val === "company") {
-        compField.classList.add("visible");
-      } else {
+      if (val === "company") compField.classList.add("visible");
+      else {
         compField.classList.remove("visible");
         selectedCompany = "";
         document.getElementById("company-input").value = "";
       }
     }
 
-    /* ── LOCATION ── */
     function handleHome(isHome) {
       document.getElementById("loc-confirm").classList.remove("visible");
       document.getElementById("loc-confirm").style.display = "none";
@@ -1025,10 +413,10 @@
       btn.textContent = "Obteniendo...";
       btn.disabled = true;
       document.getElementById("gps-notice").classList.remove("visible");
-
       navigator.geolocation.getCurrentPosition(
         (pos) => {
-          const { latitude: lat, longitude: lng } = pos.coords;
+          const lat = pos.coords.latitude;
+          const lng = pos.coords.longitude;
           locationData.lat = lat.toFixed(6);
           locationData.lng = lng.toFixed(6);
           locationData.address = `${lat.toFixed(5)}, ${lng.toFixed(5)}`;
@@ -1037,8 +425,6 @@
           document.getElementById("lng").value = locationData.lng;
           document.getElementById("loc-tag").classList.add("visible");
           btn.textContent = "✅ Capturada";
-          btn.style.borderColor = "var(--accent)";
-          btn.style.color = "var(--accent)";
           btn.disabled = false;
         },
         () => {
@@ -1050,143 +436,56 @@
       );
     }
 
-    function toggleManualCoords() {
-      document.getElementById("manual-coords-group").classList.toggle("visible");
-    }
+    function toggleManualCoords() { document.getElementById("manual-coords-group").classList.toggle("visible"); }
+    function handleZoneClick() { !facturaModalConfirmed ? document.getElementById("factura-modal").classList.add("visible") : openFileInput(); }
+    function confirmFacturaModal() { facturaModalConfirmed = true; document.getElementById("factura-modal").classList.remove("visible"); setTimeout(openFileInput, 80); }
+    function openFileInput() { const input = document.getElementById("factura-file"); input.value = ""; input.click(); }
 
-    /* ── FILE UPLOAD CLICK FLOW ──
-       1. User clicks zone → if modal not yet confirmed, show modal.
-       2. User clicks "Entendido, continuar" → modal closes, openFileInput() fires.
-       3. openFileInput() triggers the hidden <input type="file"> — browser shows
-          native picker (camera / photos / files on iOS & Android).
-    ── */
-    function handleZoneClick() {
-      if (!facturaModalConfirmed) {
-        document.getElementById("factura-modal").classList.add("visible");
-      } else {
-        openFileInput();
-      }
-    }
-
-    function confirmFacturaModal() {
-      facturaModalConfirmed = true;
-      document.getElementById("factura-modal").classList.remove("visible");
-      // Small timeout so the modal has time to fully close before the native picker opens
-      setTimeout(openFileInput, 80);
-    }
-
-    function openFileInput() {
-      const input = document.getElementById("factura-file");
-      // Reset so same file can be re-selected after removal
-      input.value = "";
-      input.click();
-    }
-
-    /* ── FILE PROCESSING ── */
     const ALLOWED_IMAGE_TYPES = ["image/jpeg","image/png","image/webp","image/heic","image/heif","image/jpg"];
     const MAX_MB = 10;
-
-    function handleFileSelect(event) {
-      processFiles(Array.from(event.target.files));
-      event.target.value = ""; // reset so same file can be picked again
-    }
-
-    function handleDrop(event) {
-      event.preventDefault();
-      document.getElementById("upload-zone").classList.remove("dragover");
-      processFiles(Array.from(event.dataTransfer.files));
-    }
-
+    function handleFileSelect(event) { processFiles(Array.from(event.target.files)); event.target.value = ""; }
+    function handleDrop(event) { event.preventDefault(); document.getElementById("upload-zone").classList.remove("dragover"); processFiles(Array.from(event.dataTransfer.files)); }
     function processFiles(newFiles) {
       for (const file of newFiles) {
         const isImage = ALLOWED_IMAGE_TYPES.includes(file.type) || /\.(heic|heif)$/i.test(file.name);
-        const isPdf   = file.type === "application/pdf"         || /\.pdf$/i.test(file.name);
-
-        if (!isImage && !isPdf) {
-          showToast(`Archivo no permitido: ${file.name}. Solo PDF o imágenes (JPG, PNG, HEIC, WEBP).`, "error");
-          continue;
-        }
-        if (file.size > MAX_MB * 1024 * 1024) {
-          showToast(`El archivo "${file.name}" supera los ${MAX_MB}MB.`, "error");
-          continue;
-        }
-        // Already have a PDF → block anything else
-        if (selectedFiles.some(f => f.type === "application/pdf" || /\.pdf$/i.test(f.name))) {
-          showToast("Ya tienes un PDF seleccionado. No puedes mezclar PDF con imágenes.", "error");
-          continue;
-        }
-        // Trying to add PDF but already have images → block
-        if (isPdf && selectedFiles.length > 0) {
-          showToast("No puedes mezclar imágenes con PDF. Elimina las imágenes primero.", "error");
-          continue;
-        }
+        const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
+        if (!isImage && !isPdf) { showToast(`Archivo no permitido: ${file.name}. Solo PDF o imágenes.`, "error"); continue; }
+        if (file.size > MAX_MB * 1024 * 1024) { showToast(`El archivo "${file.name}" supera los ${MAX_MB}MB.`, "error"); continue; }
+        if (selectedFiles.some(f => f.type === "application/pdf" || /\.pdf$/i.test(f.name))) { showToast("Ya tienes un PDF seleccionado. No puedes mezclar PDF con imágenes.", "error"); continue; }
+        if (isPdf && selectedFiles.length > 0) { showToast("No puedes mezclar imágenes con PDF. Elimina las imágenes primero.", "error"); continue; }
         selectedFiles.push(file);
       }
       renderFilePreview();
     }
-
     function renderFilePreview() {
-      const list    = document.getElementById("upload-preview-list");
-      const zone    = document.getElementById("upload-zone");
+      const list = document.getElementById("upload-preview-list");
+      const zone = document.getElementById("upload-zone");
       const addMore = document.getElementById("btn-add-more");
       list.innerHTML = "";
-
-      if (selectedFiles.length === 0) {
-        list.classList.remove("visible");
-        zone.style.display = "block";
-        addMore.classList.remove("visible");
-        document.getElementById("upload-sub-text").textContent =
-          "PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Toca para seleccionar";
-        return;
-      }
-
+      if (selectedFiles.length === 0) { list.classList.remove("visible"); zone.style.display = "block"; addMore.classList.remove("visible"); document.getElementById("upload-sub-text").textContent = "PDF (1 archivo) o fotos JPG/PNG/HEIC de todas las páginas · Toca para seleccionar"; return; }
       list.classList.add("visible");
-
       const hasPdf = selectedFiles.some(f => f.type === "application/pdf" || /\.pdf$/i.test(f.name));
-
-      if (hasPdf) {
-        // PDF selected → hide zone and add-more button
-        zone.style.display = "none";
-        addMore.classList.remove("visible");
-      } else {
-        // Images → hide zone (cleaner UI), show add-more button instead
-        zone.style.display = "none";
-        addMore.classList.add("visible");
-      }
-
+      zone.style.display = "none";
+      if (hasPdf) addMore.classList.remove("visible"); else addMore.classList.add("visible");
       selectedFiles.forEach((file, idx) => {
-        const item  = document.createElement("div");
+        const item = document.createElement("div");
         item.className = "upload-preview-item";
         const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
-        item.innerHTML = `
-          <span>${isPdf ? "📄 PDF" : "🖼️ Img"}</span>
-          <span title="${file.name}">${file.name}</span>
-          <button class="btn-remove-item" type="button" onclick="removeFile(${idx})" title="Eliminar">✕</button>
-        `;
+        item.innerHTML = `<span>${isPdf ? "📄 PDF" : "🖼️ Img"}</span><span title="${file.name}">${file.name}</span><button class="btn-remove-item" type="button" onclick="removeFile(${idx})" title="Eliminar">✕</button>`;
         list.appendChild(item);
       });
     }
+    function removeFile(idx) { selectedFiles.splice(idx, 1); renderFilePreview(); }
 
-    function removeFile(idx) {
-      selectedFiles.splice(idx, 1);
-      renderFilePreview();
-    }
-
-    /* ── CLOUDINARY UPLOAD ── */
     async function uploadToCloudinary(file, index, total) {
-      const isPdf        = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
+      const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
       const resourceType = isPdf ? "raw" : "image";
       updateLoadingProgress(`Subiendo archivo ${index + 1} de ${total}...`);
-
       const fd = new FormData();
       fd.append("file", file);
       fd.append("upload_preset", CONFIG.CLOUDINARY_PRESET);
       fd.append("folder", "solar-leads");
-
-      const res = await fetch(
-        `https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD}/${resourceType}/upload`,
-        { method: "POST", body: fd }
-      );
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD}/${resourceType}/upload`, { method: "POST", body: fd });
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error?.message || `Error al subir archivo ${file.name}`);
@@ -1195,108 +494,47 @@
       if (!data.secure_url) throw new Error("Cloudinary no devolvió secure_url para " + file.name);
       return { secureUrl: data.secure_url, fileType: isPdf ? "pdf" : "image", fileName: file.name };
     }
+    function updateLoadingProgress(msg) { const el = document.getElementById("loading-progress"); if (el) el.textContent = msg; }
 
-    function updateLoadingProgress(msg) {
-      const el = document.getElementById("loading-progress");
-      if (el) el.textContent = msg;
-    }
-
-    /* ── VALIDATION (sin validación de dirección) ── */
     async function validate() {
-      const required = [
-        { id: "nombre",   label: "Nombre" },
-        { id: "apellido", label: "Apellido" },
-        { id: "telefono", label: "Teléfono" },
-        { id: "email",    label: "Correo electrónico" },
-      ];
-      for (const f of required) {
-        if (!document.getElementById(f.id).value.trim()) {
-          showToast(`Por favor completa el campo: ${f.label}`, "error");
-          document.getElementById(f.id).focus();
-          return false;
-        }
-      }
-
-      const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRx.test(document.getElementById("email").value.trim())) {
-        showToast("Por favor escribe un correo electrónico válido.", "error");
-        return false;
-      }
-
-      if (!choiceMode) {
-        showToast("Por favor selecciona cómo deseas cotizar.", "error");
-        document.getElementById("modo-cotizar").focus();
-        return false;
-      }
-
-      if (choiceMode === "company") {
-        selectedCompany = document.getElementById("company-input").value.trim();
-        if (!selectedCompany) {
-          showToast("Por favor escribe el nombre de la compañía con la que deseas cotizar.", "error");
-          document.getElementById("company-input").focus();
-          return false;
-        }
-      }
-
-      if (!locationData.type) {
-        showToast("Por favor indica si estás en tu residencia o ingresa la dirección.", "error");
-        return false;
-      }
-
-      if (locationData.type === "gps" && !locationData.lat) {
-        showToast("Por favor presiona 'Detectar' y autoriza el acceso a tu ubicación GPS.", "error");
-        return false;
-      }
-
+      const required = [{ id: "nombre", label: "Nombre" }, { id: "apellido", label: "Apellido" }, { id: "telefono", label: "Teléfono" }, { id: "email", label: "Correo electrónico" }];
+      for (const f of required) { if (!document.getElementById(f.id).value.trim()) { showToast(`Por favor completa el campo: ${f.label}`, "error"); document.getElementById(f.id).focus(); return false; } }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById("email").value.trim())) { showToast("Por favor escribe un correo electrónico válido.", "error"); return false; }
+      if (!choiceMode) { showToast("Por favor selecciona cómo deseas cotizar.", "error"); document.getElementById("modo-cotizar").focus(); return false; }
+      if (choiceMode === "company") { selectedCompany = document.getElementById("company-input").value.trim(); if (!selectedCompany) { showToast("Por favor escribe el nombre de la compañía con la que deseas cotizar.", "error"); document.getElementById("company-input").focus(); return false; } }
+      if (!locationData.type) { showToast("Por favor indica si estás en tu residencia o ingresa la dirección.", "error"); return false; }
+      if (locationData.type === "gps" && !locationData.lat) { showToast("Por favor presiona 'Detectar' y autoriza el acceso a tu ubicación GPS.", "error"); return false; }
       if (locationData.type === "manual") {
         const manualAddr = document.getElementById("ubicacion-manual").value.trim();
-        const manualLat  = document.getElementById("manual-lat")?.value.trim();
-        const manualLng  = document.getElementById("manual-lng")?.value.trim();
-
+        const manualLat = document.getElementById("manual-lat")?.value.trim();
+        const manualLng = document.getElementById("manual-lng")?.value.trim();
         if (manualLat && manualLng) {
-          if (isNaN(parseFloat(manualLat)) || isNaN(parseFloat(manualLng))) {
-            showToast("Las coordenadas ingresadas no son válidas.", "error");
-            return false;
-          }
+          if (isNaN(parseFloat(manualLat)) || isNaN(parseFloat(manualLng))) { showToast("Las coordenadas ingresadas no son válidas.", "error"); return false; }
           locationData.lat = parseFloat(manualLat).toFixed(6);
           locationData.lng = parseFloat(manualLng).toFixed(6);
           locationData.address = manualAddr || `${manualLat}, ${manualLng}`;
           document.getElementById("lat").value = locationData.lat;
           document.getElementById("lng").value = locationData.lng;
         } else {
-          if (!manualAddr) {
-            showToast("Por favor ingresa la dirección de tu residencia.", "error");
-            document.getElementById("ubicacion-manual").focus();
-            return false;
-          }
-          // ✅ Sin validación de dirección — se acepta tal como la escribe el usuario
+          if (!manualAddr) { showToast("Por favor ingresa la dirección de tu residencia.", "error"); document.getElementById("ubicacion-manual").focus(); return false; }
           locationData.address = manualAddr;
         }
       }
-
-      if (selectedFiles.length === 0) {
-        showToast("Por favor sube tu factura de LUMA Energy.", "error");
-        return false;
-      }
-
+      if (selectedFiles.length === 0) { showToast("Por favor sube tu factura de LUMA Energy.", "error"); return false; }
       return true;
     }
 
-    /* ── SUBMIT ── */
     async function submitForm() {
       const ok = await validate();
       if (!ok) return;
-
       const btn = document.getElementById("btn-submit");
       btn.disabled = true;
       document.getElementById("loading-text").textContent = "Enviando tu solicitud...";
       document.getElementById("loading").classList.add("visible");
-
       try {
-        let facturaUrls  = [];
+        let facturaUrls = [];
         let facturaNames = [];
         let facturaTypes = [];
-
         if (CONFIG.USE_CLOUDINARY) {
           for (let i = 0; i < selectedFiles.length; i++) {
             const result = await uploadToCloudinary(selectedFiles[i], i, selectedFiles.length);
@@ -1305,38 +543,27 @@
             facturaTypes.push(result.fileType);
           }
         }
-
         updateLoadingProgress("Guardando tu solicitud...");
-
         const payload = {
-          nombre:             document.getElementById("nombre").value.trim(),
-          apellido:           document.getElementById("apellido").value.trim(),
-          telefono:           document.getElementById("telefono").value.trim(),
-          email:              document.getElementById("email").value.trim(),
-          modoCotar:          choiceMode === "company"
-                                ? `Compania especifica: ${selectedCompany}`
-                                : "Pago mas bajo de la industria",
-          ubicacionTipo:      locationData.type,
+          nombre: document.getElementById("nombre").value.trim(),
+          apellido: document.getElementById("apellido").value.trim(),
+          telefono: document.getElementById("telefono").value.trim(),
+          email: document.getElementById("email").value.trim(),
+          modoCotizar: choiceMode === "company" ? `Compania especifica: ${selectedCompany}` : "Pago mas bajo de la industria",
+          ubicacionTipo: locationData.type,
           ubicacionDireccion: locationData.address || document.getElementById("ubicacion-manual")?.value || "",
-          lat:                locationData.lat || "",
-          lng:                locationData.lng || "",
+          lat: locationData.lat || "",
+          lng: locationData.lng || "",
           facturaUrls,
           facturaNames,
           facturaTypes,
-          facturaUrl:   facturaUrls[0]  || "",
-          facturaType:  facturaTypes[0] || "",
-          facturaName:  facturaNames[0] || "",
-          timestamp:    new Date().toISOString(),
-          source:       window.location.href,
+          facturaUrl: facturaUrls[0] || "",
+          facturaType: facturaTypes[0] || "",
+          facturaName: facturaNames[0] || "",
+          timestamp: new Date().toISOString(),
+          source: window.location.href,
         };
-
-        await fetch(CONFIG.GAS_URL, {
-          method:  "POST",
-          mode:    "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body:    JSON.stringify(payload),
-        });
-
+        await fetch(CONFIG.GAS_URL, { method: "POST", mode: "no-cors", body: JSON.stringify(payload) });
         showSuccess();
       } catch (err) {
         console.error(err);
@@ -1347,22 +574,9 @@
         updateLoadingProgress("");
       }
     }
-
-    function showSuccess() {
-      document.getElementById("form-body").style.display = "none";
-      document.getElementById("success-state").classList.add("visible");
-      document.getElementById("cotizar").scrollIntoView({ behavior: "smooth" });
-    }
-
-    /* ── TOAST ── */
+    function showSuccess() { document.getElementById("form-body").style.display = "none"; document.getElementById("success-state").classList.add("visible"); document.getElementById("cotizar").scrollIntoView({ behavior: "smooth" }); }
     let toastTimer;
-    function showToast(msg, type = "info") {
-      const t = document.getElementById("toast");
-      t.textContent = msg;
-      t.className = "toast show " + type;
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => t.classList.remove("show"), 6000);
-    }
+    function showToast(msg, type = "info") { const t = document.getElementById("toast"); t.textContent = msg; t.className = "toast show " + type; clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 6000); }
   </script>
 </body>
 </html>
