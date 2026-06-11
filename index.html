@@ -479,7 +479,7 @@
 
     async function uploadToCloudinary(file, index, total) {
       const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
-      updateLoadingProgress(`Subiendo archivo ${index + 1} de ${total}...`);
+      updateLoadingProgress(`Subiendo respaldo Cloudinary ${index + 1} de ${total}...`);
       const fd = new FormData();
       fd.append("file", file);
       fd.append("upload_preset", CONFIG.CLOUDINARY_PRESET);
@@ -492,6 +492,23 @@
       const data = await res.json();
       if (!data.secure_url) throw new Error("Cloudinary no devolvió secure_url para " + file.name);
       return { secureUrl: data.secure_url, fileType: isPdf ? "pdf" : "image", fileName: file.name };
+    }
+
+    function fileToBase64(file, index, total) {
+      updateLoadingProgress(`Preparando archivo para Drive ${index + 1} de ${total}...`);
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const result = String(reader.result || "");
+          const base64 = result.includes(",") ? result.split(",")[1] : result;
+          resolve({
+            base64,
+            mimeType: file.type || (file.name.toLowerCase().endsWith(".pdf") ? "application/pdf" : "image/jpeg")
+          });
+        };
+        reader.onerror = () => reject(new Error("No se pudo leer el archivo " + file.name));
+        reader.readAsDataURL(file);
+      });
     }
     function updateLoadingProgress(msg) { const el = document.getElementById("loading-progress"); if (el) el.textContent = msg; }
 
@@ -536,12 +553,24 @@
         let facturaUrls = [];
         let facturaNames = [];
         let facturaTypes = [];
-        if (CONFIG.USE_CLOUDINARY) {
-          for (let i = 0; i < selectedFiles.length; i++) {
-            const result = await uploadToCloudinary(selectedFiles[i], i, selectedFiles.length);
-            facturaUrls.push(result.secureUrl);
-            facturaNames.push(result.fileName);
-            facturaTypes.push(result.fileType);
+        let facturaBase64s = [];
+        let facturaMimeTypes = [];
+
+        for (let i = 0; i < selectedFiles.length; i++) {
+          const file = selectedFiles[i];
+          const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
+
+          const base64Result = await fileToBase64(file, i, selectedFiles.length);
+          facturaBase64s.push(base64Result.base64);
+          facturaMimeTypes.push(base64Result.mimeType);
+          facturaNames.push(file.name);
+          facturaTypes.push(isPdf ? "pdf" : "image");
+
+          if (CONFIG.USE_CLOUDINARY) {
+            const cloudResult = await uploadToCloudinary(file, i, selectedFiles.length);
+            facturaUrls.push(cloudResult.secureUrl);
+          } else {
+            facturaUrls.push("");
           }
         }
         updateLoadingProgress("Guardando tu solicitud...");
@@ -559,9 +588,13 @@
           facturaUrls,
           facturaNames,
           facturaTypes,
+          facturaBase64s,
+          facturaMimeTypes,
           facturaUrl: facturaUrls[0] || "",
           facturaType: facturaTypes[0] || "",
           facturaName: facturaNames[0] || "",
+          facturaBase64: facturaBase64s[0] || "",
+          facturaMimeType: facturaMimeTypes[0] || "",
           timestamp: new Date().toISOString(),
           source: window.location.href,
         };
