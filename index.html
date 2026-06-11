@@ -479,13 +479,12 @@
 
     async function uploadToCloudinary(file, index, total) {
       const isPdf = file.type === "application/pdf" || /\.pdf$/i.test(file.name);
-      const resourceType = isPdf ? "raw" : "image";
       updateLoadingProgress(`Subiendo archivo ${index + 1} de ${total}...`);
       const fd = new FormData();
       fd.append("file", file);
       fd.append("upload_preset", CONFIG.CLOUDINARY_PRESET);
       fd.append("folder", "solar-leads");
-      const res = await fetch(`https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD}/${resourceType}/upload`, { method: "POST", body: fd });
+      const res = await fetch(`https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD}/auto/upload`, { method: "POST", body: fd });
       if (!res.ok) {
         const errData = await res.json().catch(() => ({}));
         throw new Error(errData.error?.message || `Error al subir archivo ${file.name}`);
@@ -500,8 +499,10 @@
       const required = [{ id: "nombre", label: "Nombre" }, { id: "apellido", label: "Apellido" }, { id: "telefono", label: "Teléfono" }, { id: "email", label: "Correo electrónico" }];
       for (const f of required) { if (!document.getElementById(f.id).value.trim()) { showToast(`Por favor completa el campo: ${f.label}`, "error"); document.getElementById(f.id).focus(); return false; } }
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById("email").value.trim())) { showToast("Por favor escribe un correo electrónico válido.", "error"); return false; }
-      if (!choiceMode) { showToast("Por favor selecciona cómo deseas cotizar.", "error"); document.getElementById("modo-cotizar").focus(); return false; }
-      if (choiceMode === "company") { selectedCompany = document.getElementById("company-input").value.trim(); if (!selectedCompany) { showToast("Por favor escribe el nombre de la compañía con la que deseas cotizar.", "error"); document.getElementById("company-input").focus(); return false; } }
+      const selectedMode = document.getElementById("modo-cotizar").value;
+      choiceMode = selectedMode;
+      if (!selectedMode) { showToast("Por favor selecciona cómo deseas cotizar.", "error"); document.getElementById("modo-cotizar").focus(); return false; }
+      if (selectedMode === "company") { selectedCompany = document.getElementById("company-input").value.trim(); if (!selectedCompany) { showToast("Por favor escribe el nombre de la compañía con la que deseas cotizar.", "error"); document.getElementById("company-input").focus(); return false; } }
       if (!locationData.type) { showToast("Por favor indica si estás en tu residencia o ingresa la dirección.", "error"); return false; }
       if (locationData.type === "gps" && !locationData.lat) { showToast("Por favor presiona 'Detectar' y autoriza el acceso a tu ubicación GPS.", "error"); return false; }
       if (locationData.type === "manual") {
@@ -544,12 +545,13 @@
           }
         }
         updateLoadingProgress("Guardando tu solicitud...");
+        const modoSelect = document.getElementById("modo-cotizar").value;
         const payload = {
           nombre: document.getElementById("nombre").value.trim(),
           apellido: document.getElementById("apellido").value.trim(),
           telefono: document.getElementById("telefono").value.trim(),
           email: document.getElementById("email").value.trim(),
-          modoCotizar: choiceMode === "company" ? `Compania especifica: ${selectedCompany}` : "Pago mas bajo de la industria",
+          modoCotizar: modoSelect === "company" ? `Compañía específica: ${selectedCompany}` : "Pago más bajo de la industria",
           ubicacionTipo: locationData.type,
           ubicacionDireccion: locationData.address || document.getElementById("ubicacion-manual")?.value || "",
           lat: locationData.lat || "",
